@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StockLedger — Bookkeeping &amp; Inventory Control for Businesses That Carry Stock</title>
+<meta name="description" content="We reconcile your warehouse to your books. QuickBooks bookkeeping, inventory control, and product costing for e-commerce sellers, distributors and small manufacturers in the US, UK and Middle East.">
+<meta name="theme-color" content="#16283f">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2316283f'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23c99a5b' text-anchor='middle'>S</text></svg>">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="StockLedger — Bookkeeping for Businesses That Carry Stock">
+<meta property="og:description" content="Your books say one thing. Your warehouse says another. We fix the gap.">
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span>StockLedger<small>Inventory &amp; Accounts</small></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="#pricing">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="contact.html">Book a Free Review</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div>
+        <span class="eyebrow">Inventory-Led Bookkeeping</span>
+        <h1>Your books say one thing.<br>Your warehouse says <span class="hl">another.</span></h1>
+        <p class="hero-sub">
+          Most bookkeepers can close your month. Very few can tell you why your stock
+          count doesn't match your ledger — or what a unit actually costs you.
+          We do both, because we've run the warehouse floor and the books.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="contact.html">Book a Free Inventory Health Check</a>
+          <a class="btn btn-ghost" href="case-studies.html">See Our Work</a>
+        </div>
+
+        <p class="hero-note">
+          <strong>No obligation.</strong> 30 minutes. We review your current stock and
+          books setup and send you a written list of what's broken — whether you hire us or not.
+        </p>
+      </div>
+
+      <!-- Ledger reconciliation mock -->
+      <div class="hero-card" aria-hidden="true">
+        <div class="hero-card-top">
+          <span>Stock Reconciliation</span>
+          <span>Period 07</span>
+        </div>
+        <div class="hero-card-body">
+          <div class="recon-row">
+            <div><div class="name">Leather Upper — Blk</div><div class="sku">SKU 4471-A</div></div>
+            <div class="num bad">−318</div>
+            <span class="pill err">Variance</span>
+          </div>
+          <div class="recon-row">
+            <div><div class="name">Sole Unit 42</div><div class="sku">SKU 8820-C</div></div>
+            <div class="num good">0</div>
+            <span class="pill fix">Matched</span>
+          </div>
+          <div class="recon-row">
+            <div><div class="name">Adhesive 5L</div><div class="sku">SKU 1194-K</div></div>
+            <div class="num bad">−47</div>
+            <span class="pill err">Expired</span>
+          </div>
+          <div class="recon-row">
+            <div><div class="name">Carton — Export</div><div class="sku">SKU 3306-B</div></div>
+            <div class="num good">0</div>
+            <span class="pill fix">Matched</span>
+          </div>
+          <div class="recon-row">
+            <div><div class="name">Thread Spool 200m</div><div class="sku">SKU 6612-F</div></div>
+            <div class="num good">0</div>
+            <span class="pill fix">Matched</span>
+          </div>
+        </div>
+        <div class="hero-card-foot">
+          <span>Variance found: <strong>$4,180</strong></span>
+          <span>Books adjusted &amp; posted to QuickBooks</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TRUST BAR ============================ -->
+<div class="trustbar">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div>
+        <div class="trust-num">15<span>+</span></div>
+        <div class="trust-lbl">Years in Operations</div>
+      </div>
+      <div>
+        <div class="trust-num">8,000<span>+</span></div>
+        <div class="trust-lbl">SKUs Managed</div>
+      </div>
+      <div>
+        <div class="trust-num">&lt;0.5<span>%</span></div>
+        <div class="trust-lbl">Stock Loss Rate</div>
+      </div>
+      <div>
+        <div class="trust-num">900<span>/day</span></div>
+        <div class="trust-lbl">Orders Reconciled</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ PROBLEM ============================ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">The Real Problem</span>
+      <h2>If you carry stock, a general bookkeeper isn't enough</h2>
+      <p>Three things quietly drain profit in every inventory business. None of them show up on a standard P&amp;L.</p>
+    </div>
+
+    <div class="grid g-3">
+      <div class="prob-card">
+        <h3>The count never matches</h3>
+        <p>
+          Your system says 1,400 units. The floor says 1,082. Nobody knows when the gap
+          opened, so it gets written off every quarter and repeats the next one.
+        </p>
+        <p class="prob-quote">"We just adjust it at year end."</p>
+      </div>
+
+      <div class="prob-card">
+        <h3>You don't know your true unit cost</h3>
+        <p>
+          Material, labour, freight, overhead, wastage — most owners price off a rough
+          multiple. Some of your best-selling lines are losing money and you can't see which.
+        </p>
+        <p class="prob-quote">"We add 40% and hope."</p>
+      </div>
+
+      <div class="prob-card">
+        <h3>Your books are 4 months behind</h3>
+        <p>
+          Uncategorised transactions, unreconciled bank feeds, inventory sitting as one
+          lump expense. When you need a lender, a buyer, or a decision — the numbers aren't there.
+        </p>
+        <p class="prob-quote">"We'll clean it up before tax season."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVICES ============================ -->
+<section class="sec-soft">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">What We Do</span>
+      <h2>One team for stock, books, and cost</h2>
+      <p>You don't need three freelancers who don't talk to each other. The warehouse and the ledger are the same problem.</p>
+    </div>
+
+    <div class="grid g-4">
+      <div class="card">
+        <div class="card-icon">▤</div>
+        <h3>Inventory Control</h3>
+        <p>SKU &amp; item master setup, stock in/out records, adjustments, transfers, reconciliation, FIFO and expiry control, low-stock monitoring.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">₹</div>
+        <h3>QuickBooks Bookkeeping</h3>
+        <p>Full company setup, chart of accounts, AR/AP, invoice &amp; bill entry, bank and credit card reconciliation, monthly close, cleanup and catch-up.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">Σ</div>
+        <h3>Costing &amp; Pricing</h3>
+        <p>Material, labour and overhead costing, per-unit cost, job and project costing, selling price build-up, margin and cost-vs-actual analysis.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">◫</div>
+        <h3>Warehouse Consultancy</h3>
+        <p>Layout and racking design, SOP writing, process audits, ERP/Dynamics&nbsp;365 inventory setup, new-site launch and team training.</p>
+      </div>
+    </div>
+
+    <div class="btn-row" style="justify-content:center; margin-top:44px;">
+      <a class="btn btn-navy" href="services.html">See every service in detail →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CASE STUDIES ============================ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Track Record</span>
+      <h2>Work we've actually done</h2>
+      <p>These are operational results delivered inside real companies — a national footwear manufacturer, a venture-backed grocery delivery platform, and a QSR franchise operator.</p>
+    </div>
+
+    <div class="grid g-3">
+
+      <article class="case">
+        <div class="case-top">
+          <span class="case-tag">Footwear Manufacturing</span>
+          <h3>Relocating 8,000 SKUs without losing the stock</h3>
+        </div>
+        <div class="case-body">
+          <p>
+            A full warehouse move for a national footwear manufacturer. Every SKU was
+            re-mapped, re-binned and re-verified against the ERP before the doors opened
+            at the new site — so the ledger never went blind.
+          </p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><b>8,000</b><span>SKUs moved</span></div>
+          <div class="case-metric"><b>&lt;0.5%</b><span>Damage / loss</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-top">
+          <span class="case-tag">Grocery Delivery / E-commerce</span>
+          <h3>A central hub feeding nine warehouses</h3>
+        </div>
+        <div class="case-body">
+          <p>
+            Designed and launched a central warehouse for fast-moving SKUs supplying nine
+            city sites — including layout, racking, transfer-order flow and the inventory
+            liquidation process between depot and marts.
+          </p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><b>9</b><span>Sites supplied</span></div>
+          <div class="case-metric"><b>192K</b><span>Items moved in 5 days</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-top">
+          <span class="case-tag">QSR / Food Service</span>
+          <h3>Ending expiry write-offs on fresh stock</h3>
+        </div>
+        <div class="case-body">
+          <p>
+            Introduced system-enforced expiry tracking and 100% FIFO across fresh
+            inventory for a QSR franchise operator, plus supplier GRN analysis and a
+            controlled return-to-vendor route for QC rejections.
+          </p>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><b>100%</b><span>FIFO compliance</span></div>
+          <div class="case-metric"><b>900</b><span>Orders/day accuracy</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="btn-row" style="justify-content:center; margin-top:44px;">
+      <a class="btn btn-ghost" href="case-studies.html">Read the full case studies →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="sec-soft">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">How We Start</span>
+      <h2>Three steps, no long contract</h2>
+    </div>
+
+    <div class="grid g-3">
+      <div class="step">
+        <div class="step-n">1</div>
+        <h3>Free Health Check</h3>
+        <p>
+          A 30-minute call plus read-only access to your file. We send back a written
+          findings note: where stock and books disagree, what's costing you, what to fix first.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <h3>Setup &amp; Cleanup</h3>
+        <p>
+          One-time engagement. Chart of accounts, item master, opening balances,
+          historical catch-up and reconciliation — until the file is clean and trustworthy.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <h3>Monthly Retainer</h3>
+        <p>
+          We keep it clean: transactions, reconciliation, stock movement, monthly reports
+          by the 10th. Month-to-month. Cancel with 30 days' notice.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTIMONIALS ============================ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">References</span>
+      <h2>What people we've worked with say</h2>
+      <p>Verified references from managers and directors we reported to directly. Full names and titles on request.</p>
+    </div>
+
+    <div class="grid g-3">
+
+      <!-- TODO: replace with the real reviewer's name, title, company and words -->
+      <figure class="quote needs-content" style="margin:0;">
+        <div class="quote-mark">“</div>
+        <p>[ REVIEW #1 — awaiting the real quote. Ask for 2–3 sentences on: accuracy of stock control, reliability under deadline, and one specific result. ]</p>
+        <figcaption class="quote-by">
+          <span class="avatar">?</span>
+          <span><b>[ Full Name ]</b><span>[ Title ] · [ Company ]</span></span>
+        </figcaption>
+      </figure>
+
+      <figure class="quote needs-content" style="margin:0;">
+        <div class="quote-mark">“</div>
+        <p>[ REVIEW #2 — awaiting the real quote. Ask for 2–3 sentences on: warehouse relocation / setup work, and how the team was managed. ]</p>
+        <figcaption class="quote-by">
+          <span class="avatar">?</span>
+          <span><b>[ Full Name ]</b><span>[ Title ] · [ Company ]</span></span>
+        </figcaption>
+      </figure>
+
+      <figure class="quote needs-content" style="margin:0;">
+        <div class="quote-mark">“</div>
+        <p>[ REVIEW #3 — awaiting the real quote from the costing / QuickBooks side. Ask for 2–3 sentences on: costing accuracy and reporting quality. ]</p>
+        <figcaption class="quote-by">
+          <span class="avatar">?</span>
+          <span><b>[ Full Name ]</b><span>[ Title ] · [ Company ]</span></span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRICING ============================ -->
+<section class="sec-soft" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Pricing</span>
+      <h2>Flat monthly fees. No hourly billing.</h2>
+      <p>All prices in USD. Onboarding &amp; setup is $499 one-time — waived when you pay annually.</p>
+    </div>
+
+    <div class="grid g-4">
+
+      <div class="plan">
+        <h3>Essentials</h3>
+        <p class="plan-for">For owners who just need their records entered and organised properly.</p>
+        <div class="price">$349<small>/mo</small></div>
+        <p class="price-note">Up to 250 transactions</p>
+        <ul>
+          <li>Data entry &amp; processing</li>
+          <li>Excel / Google Sheets work</li>
+          <li>Data cleaning &amp; formatting</li>
+          <li>PDF &amp; image to Excel/Word</li>
+          <li>Customer, supplier &amp; item records</li>
+          <li>Monthly summary sheet</li>
+        </ul>
+        <a class="btn btn-ghost" href="contact.html">Get Started</a>
+      </div>
+
+      <div class="plan">
+        <h3>Inventory Control</h3>
+        <p class="plan-for">For distributors and sellers whose stock numbers can't be trusted.</p>
+        <div class="price">$649<small>/mo</small></div>
+        <p class="price-note">Up to 1,500 SKUs</p>
+        <ul>
+          <li>SKU &amp; item master management</li>
+          <li>Stock in / out &amp; adjustments</li>
+          <li>Stock transfers between sites</li>
+          <li>Monthly stock reconciliation</li>
+          <li>FIFO &amp; expiry monitoring</li>
+          <li>Low-stock &amp; dead-stock alerts</li>
+          <li>Inventory valuation report</li>
+        </ul>
+        <a class="btn btn-ghost" href="contact.html">Get Started</a>
+      </div>
+
+      <div class="plan featured">
+        <span class="plan-tag">Most Chosen</span>
+        <h3>Full Stack</h3>
+        <p class="plan-for">Stock and books handled by one team, reconciled against each other.</p>
+        <div class="price">$1,299<small>/mo</small></div>
+        <p class="price-note">Everything in Inventory + Bookkeeping</p>
+        <ul>
+          <li>Everything in Inventory Control</li>
+          <li>Everything in Bookkeeping</li>
+          <li>Stock-to-ledger reconciliation</li>
+          <li>Quarterly costing review</li>
+          <li>Cash flow &amp; margin reporting</li>
+          <li>Named account manager</li>
+          <li>Priority turnaround</li>
+        </ul>
+        <a class="btn btn-primary" href="contact.html">Book a Free Review</a>
+      </div>
+
+      <div class="plan">
+        <h3>Bookkeeping</h3>
+        <p class="plan-for">For businesses that need a clean, current QuickBooks file every month.</p>
+        <div class="price">$749<small>/mo</small></div>
+        <p class="price-note">Up to 2 bank + 1 card account</p>
+        <ul>
+          <li>QuickBooks setup or takeover</li>
+          <li>Chart of accounts &amp; categorisation</li>
+          <li>Invoice &amp; bill entry (AR / AP)</li>
+          <li>Bank &amp; credit card reconciliation</li>
+          <li>Monthly close by the 10th</li>
+          <li>P&amp;L, balance sheet, cash flow</li>
+          <li>Cleanup &amp; catch-up available</li>
+        </ul>
+        <a class="btn btn-ghost" href="contact.html">Get Started</a>
+      </div>
+
+    </div>
+
+    <!-- Project services -->
+    <div class="grid g-2" style="margin-top:26px;">
+      <div class="card">
+        <h3>Costing &amp; Pricing Analysis <span style="font-family:var(--serif);color:var(--bronze-dark)">— from $895</span></h3>
+        <p>
+          One-time project. Material, labour, overhead and per-unit cost build-up,
+          job/project costing, selling price and margin analysis — delivered as a working
+          Excel model you keep and can re-run yourself.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Warehouse Consultancy <span style="font-family:var(--serif);color:var(--bronze-dark)">— from $2,500</span></h3>
+        <p>
+          Scoped project or $150/hr. Layout and racking design, SOP development, process
+          audit and cost-reduction review, ERP/Dynamics 365 inventory setup, new-site
+          launch and team training.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TEAM ============================ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Who You'll Work With</span>
+      <h2>Two specialists, not a call centre</h2>
+      <p>You deal directly with the people doing the work.</p>
+    </div>
+
+    <div class="grid g-2">
+
+      <div class="person">
+        <div class="person-av">MR</div>
+        <div>
+          <h3>Mohsin Raza</h3>
+          <div class="person-role">Inventory &amp; Warehouse Operations</div>
+          <p>
+            15+ years running warehouse and supply chain operations across manufacturing,
+            e-commerce and food service — including a national footwear manufacturer, a
+            venture-backed grocery delivery platform, and a QSR franchise operator.
+            B.Com (IT), University of the Punjab.
+          </p>
+          <div class="tags">
+            <span class="tag">Dynamics 365</span>
+            <span class="tag">ERP</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Stock Reconciliation</span>
+            <span class="tag">FIFO &amp; Expiry</span>
+            <span class="tag">Warehouse Setup</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-av">SJ</div>
+        <div>
+          <h3>Sajjad <span style="font-size:.8rem;color:var(--ink-3);font-family:var(--sans)">[ surname to confirm ]</span></h3>
+          <div class="person-role">Costing, Bookkeeping &amp; QuickBooks</div>
+          <p>
+            Costing and bookkeeping specialist, currently supporting a leading leather
+            export house. Focus on product and manufacturing costing, overhead allocation,
+            per-unit cost accuracy, and keeping QuickBooks files clean, current and
+            decision-ready.
+          </p>
+          <div class="tags">
+            <span class="tag">QuickBooks Online</span>
+            <span class="tag">QuickBooks Desktop</span>
+            <span class="tag">Product Costing</span>
+            <span class="tag">Bank Reconciliation</span>
+            <span class="tag">AR / AP</span>
+            <span class="tag">Advanced Excel</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="sec-soft" id="faq">
+  <div class="wrap-narrow">
+    <div class="sec-head center">
+      <span class="eyebrow">Questions</span>
+      <h2>Before you book</h2>
+    </div>
+
+    <div class="faq">
+      <details open>
+        <summary>Which countries do you work with?</summary>
+        <p>We work with businesses in the United States, United Kingdom, Canada, and the Middle East (UAE, Saudi Arabia, Qatar). Our team overlaps with US Eastern and UK business hours, and we're fully available during Gulf hours.</p>
+      </details>
+      <details>
+        <summary>Do you only work in QuickBooks?</summary>
+        <p>QuickBooks Online and Desktop are our primary platforms. We also work in Microsoft Dynamics 365, other ERP inventory modules, and Excel/Google Sheets. If you're on Xero or Zoho, tell us on the call — we'll be straight with you about whether we're the right fit.</p>
+      </details>
+      <details>
+        <summary>My books are a mess and years behind. Can you still help?</summary>
+        <p>That's a large part of what we do. Cleanup and catch-up is quoted separately from the monthly retainer, based on how many months and transactions are involved. The free health check tells you the scope before you commit to anything.</p>
+      </details>
+      <details>
+        <summary>How do you access my data securely?</summary>
+        <p>Read-only accountant access to QuickBooks first, and only as much as the work requires. We sign an NDA before any access is granted. We do not ask for your banking passwords, and we never need them.</p>
+      </details>
+      <details>
+        <summary>Am I locked into a contract?</summary>
+        <p>No. Retainers are month-to-month with 30 days' notice. Setup and project work is a fixed one-time fee agreed in writing before we start.</p>
+      </details>
+      <details>
+        <summary>What happens in the free Inventory Health Check?</summary>
+        <p>A 30-minute call, then we review whatever you can share — a stock report, a QuickBooks file, even spreadsheets. You get back a short written note listing what's inaccurate, what it's likely costing you, and the order we'd fix it in. Yours to keep, whether or not you hire us.</p>
+      </details>
+      <details>
+        <summary>Who actually does the work?</summary>
+        <p>The two people on this page. Nothing is passed to an anonymous back office. As we grow, any team member added works under the same named account lead you started with.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Find out what your stock is really costing you</h2>
+    <p>A 30-minute call and a written findings note. No pitch deck, no obligation, no card required.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="contact.html">Book the Free Health Check</a>
+      <a class="btn btn-outline-light" href="services.html">Browse Services</a>
+    </div>
+    <p class="cta-fine">Typical reply time: under 12 hours, Monday to Saturday.</p>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand-mark">S</span>
+          <span>StockLedger<small>Inventory &amp; Accounts</small></span>
+        </a>
+        <p style="max-width:320px;">
+          Bookkeeping, inventory control and costing for businesses that carry stock.
+          Serving the US, UK, Canada and the Middle East.
+        </p>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#inventory">Inventory Control</a></li>
+          <li><a href="services.html#bookkeeping">QuickBooks Bookkeeping</a></li>
+          <li><a href="services.html#costing">Costing &amp; Pricing</a></li>
+          <li><a href="services.html#data">Data Entry</a></li>
+          <li><a href="services.html#consultancy">Warehouse Consultancy</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Book a Free Review</a></li>
+          <li><a href="mailto:hello@stockledger.co">hello@stockledger.co</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bot">
+      <span>© 2026 StockLedger. All rights reserved.</span>
+      <span>Client references available on request.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var t = document.getElementById('navToggle');
+  var l = document.getElementById('navLinks');
+  if (t && l) { t.addEventListener('click', function () { l.classList.toggle('open'); }); }
+</script>
+
+</body>
+</html>
