@@ -3,8 +3,10 @@
 assets/DPs/
 assets/Hardies WearHouse/
 
-# Optimised derivatives that are generated but not referenced by any page:
-# the second portrait of each person, and one scene photo below usable resolution.
+# Generated derivatives not referenced by any page: the second portrait of each
+# person, and card crops of scenes currently used only at full size.
 assets/img/mohsin-alt.jpg
 assets/img/sajjad-alt.jpg
-assets/img/wh-retail.jpg
+assets/img/wh-aisle-card.jpg
+assets/img/wh-racking-card.jpg
+assets/img/wh-retail-card.jpg

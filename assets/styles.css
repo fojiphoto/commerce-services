@@ -398,6 +398,17 @@ section { padding: 88px 0; }
 
 /* ---------- Sub-page hero ---------- */
 .page-hero { background: var(--bg-soft); padding: 68px 0 62px; border-bottom: 1px solid var(--line); }
+.page-hero.photo-band { text-align: left; padding: 84px 0 76px; border-bottom: 0; }
+.page-hero.photo-band::before {
+  background: linear-gradient(100deg, rgba(7,16,28,.95) 0%, rgba(9,20,34,.88) 48%, rgba(11,24,40,.72) 100%);
+}
+.page-hero.photo-band::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 2;
+  background: linear-gradient(90deg, var(--bronze-dark), var(--bronze-light), var(--bronze-dark));
+}
+.page-hero.photo-band .eyebrow { color: var(--bronze-light); border-bottom-color: var(--bronze); }
+.page-hero.photo-band h1 { color: #fff; }
+.page-hero.photo-band p { color: #b6c1cf; }
 .page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.85rem); }
 .page-hero p { font-size: 1.1rem; color: var(--ink-3); max-width: 660px; margin-bottom: 0; }
 
@@ -480,6 +491,60 @@ section { padding: 88px 0; }
 .hero-photo {
   width: 100%; border-radius: var(--radius); border: 1px solid var(--line-strong);
   object-fit: cover; aspect-ratio: 4 / 3; filter: saturate(.9) contrast(1.03);
+}
+
+/* ==========================================================================
+   DARK PHOTO HERO
+   Full-bleed warehouse photograph, navy wash, white type, ledger card on top.
+   ========================================================================== */
+.hero-dark {
+  position: relative; isolation: isolate;
+  background: var(--navy-900) center/cover no-repeat;
+  border-bottom: 0; padding: 86px 0 0;
+  color: #cdd5df;
+}
+.hero-dark::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(100deg, rgba(7,16,28,.96) 0%, rgba(9,20,34,.90) 42%, rgba(11,24,40,.74) 100%);
+}
+.hero-dark::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 2;
+  background: linear-gradient(90deg, var(--bronze-dark), var(--bronze-light), var(--bronze-dark));
+}
+.hero-dark h1 { color: #fff; }
+.hero-dark h1 .hl { color: var(--bronze-light); font-style: italic; }
+.hero-dark .hero-sub { color: #b6c1cf; }
+.hero-dark .eyebrow { color: var(--bronze-light); border-bottom-color: var(--bronze); }
+.hero-dark .hero-note {
+  color: #93a2b4; border-top: 1px solid rgba(255,255,255,.14);
+}
+.hero-dark .hero-note strong { color: #cdd5df; }
+.hero-dark .btn-ghost { color: #fff; border-color: rgba(255,255,255,.38); }
+.hero-dark .btn-ghost:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+.hero-dark .hero-grid { padding-bottom: 72px; }
+.hero-dark .hero-card { box-shadow: 0 26px 60px rgba(0,0,0,.42); border-color: rgba(255,255,255,.16); }
+
+/* Stat strip sitting inside the hero */
+.hero-stats-band { position: relative; background: rgba(6,14,25,.55); border-top: 1px solid rgba(255,255,255,.15); }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+}
+.hero-stats > div { padding: 26px 8px; text-align: center; }
+.hero-stats > div + div { border-left: 1px solid rgba(255,255,255,.13); }
+.hero-stats .trust-num { font-size: 1.85rem; }
+.hero-stats .trust-lbl { color: #93a2b4; }
+
+@media (max-width: 820px) {
+  .hero-dark { padding-top: 60px; }
+  .hero-dark .hero-grid { padding-bottom: 48px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-stats > div:nth-child(3) { border-left: 0; }
+  .hero-stats > div:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.13); }
+}
+@media (max-width: 480px) {
+  .hero-stats { grid-template-columns: 1fr; }
+  .hero-stats > div + div { border-left: 0; border-top: 1px solid rgba(255,255,255,.13); }
 }
 
 /* ---------- Tool / platform row ---------- */

@@ -35,16 +35,28 @@ To switch to colour, regenerate with `duotone=False` and update nothing else.
 | `sajjad-face.jpg` 640² | `DPs/Sajjad.png` | Home team thumbnail |
 | `mohsin-alt.jpg` 640² | `DPs/Mohsin.png` | spare — second photo of Mohsin |
 | `sajjad-alt.jpg` 640² | `DPs/Sajjad.jpg` | spare — second photo of Sajjad |
-| `wh-leather.jpg` 1000×669 | `1 (4).jpg` | Home case 1, Case study 1, Case-studies CTA |
-| `wh-dc.jpg` 545×316 | `1 (2).jpg` | Home case 2, Case study 2, About CTA |
-| `wh-grocery.jpg` 612×408 | `1 (5).jpg` | Home case 3, Case study 3, Services CTA |
-| `wh-racking.jpg` 600×600 | `1 (3).jpg` | Case study 4, Home CTA band |
-| `wh-retail.jpg` 348² | `1 (1).jpg` | **unused** — too low resolution |
+
+Scene photographs stay in full colour — only the portraits are toned.
+
+| File in `assets/img/` | Source | Used on |
+|---|---|---|
+| `wh-hero.jpg` 2000×1161 | `1+(2).jpg` | **Home hero background**, Case study 2, About CTA |
+| `wh-aisle.jpg` 1800×1201 | `6.jpg` | Case-studies page hero, Home CTA band |
+| `wh-leather.jpg` 1600×1072 | `1+(4).jpg` | Case study 1, Case-studies CTA |
+| `wh-grocery.jpg` 1600×1067 | `1+(5) (1).jpg` | Case study 3, Services CTA |
+| `wh-racking.jpg` 1400² | `1+(3).jpg` | Case study 4 |
+| `wh-retail.jpg` 1200² | `1+(1).jpg` | Services page hero |
+| `wh-*-card.jpg` 780×488 | 16:10 centre crops | Home case-study cards |
+
+Scene images exist at two sizes on purpose: full-size for page heroes and detail
+figures, and a 780px 16:10 `-card` crop for the three home-page case cards, so the
+home page does not pull three 1600px files it only renders at card width.
 
 Warehouse photos are captioned as illustrative, never as the team's own facility.
 
-To regenerate after adding or replacing source images, re-run the Pillow resize step
-(square top-biased crop for portraits, width-capped resize for scenes, JPEG q82–84).
+To regenerate after adding or replacing source images, re-run the Pillow step
+(top-biased square/4:5 crops with duotone for portraits, width-capped resize plus
+16:10 card crops for scenes, JPEG q80–86).
 
 ## Before launch — outstanding items
 
@@ -71,8 +83,7 @@ Search the codebase for `TODO`, `[ ` and `needs-content` to find every placehold
 
 ### Image upgrades worth making
 
-- Higher-resolution warehouse photography (1600px+ wide). The current scene photos are
-  545–1000px, which limits them to cards and heavily-overlaid background bands.
+- Photography of the team's own facilities, to replace the illustrative stock scenes.
 - An environment portrait of each person (on the warehouse floor, tablet in hand) to sit
   alongside the headshots.
 - Screenshots of real anonymised deliverables to replace or supplement the CSS mockups
