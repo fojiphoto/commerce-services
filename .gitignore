@@ -3,9 +3,8 @@
 assets/DPs/
 assets/Hardies WearHouse/
 
-# Optimised derivatives that are generated but not used on any page.
-# These are portraits of people not identified on the site, and one photo below
-# usable resolution. No reason to publish them.
+# Optimised derivatives that are generated but not referenced by any page:
+# the second portrait of each person, and one scene photo below usable resolution.
 assets/img/mohsin-alt.jpg
 assets/img/sajjad-alt.jpg
 assets/img/wh-retail.jpg

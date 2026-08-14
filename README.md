@@ -21,12 +21,20 @@ No build step, no framework, no CDN. Plain HTML + one stylesheet.
 Source files live in `assets/DPs/` and `assets/Hardies WearHouse/`.
 Web-optimised derivatives are generated into `assets/img/` and are what the pages use.
 
+Portraits are rendered as a **navy duotone** (black point `#121e2e`, white point
+`#faf7f2`). The two people were photographed in very different conditions — one studio
+shot against a purple wall, one natural outdoor portrait — and a shared tonal treatment
+is what makes them sit together as one team. It also keeps them inside the site palette.
+To switch to colour, regenerate with `duotone=False` and update nothing else.
+
 | File in `assets/img/` | Source | Used on |
 |---|---|---|
-| `mohsin.jpg` 900² | `DPs/Mohsin.png` | Home team, About bio |
-| `sajjad.jpg` 900² | `DPs/Sajjad.png` | Home team, About bio |
-| `mohsin-alt.jpg` 900² | `DPs/Mohsin 2.png` | **unused** — different person, see below |
-| `sajjad-alt.jpg` 640² | `DPs/Sajjad.jpg` | **unused** — different person, see below |
+| `mohsin.jpg` 880×1100 | `DPs/Mohsin 2.png` | About bio (large portrait) |
+| `mohsin-face.jpg` 640² | `DPs/Mohsin 2.png` | Home team thumbnail |
+| `sajjad.jpg` 880×1100 | `DPs/Sajjad.png` | About bio (large portrait) |
+| `sajjad-face.jpg` 640² | `DPs/Sajjad.png` | Home team thumbnail |
+| `mohsin-alt.jpg` 640² | `DPs/Mohsin.png` | spare — second photo of Mohsin |
+| `sajjad-alt.jpg` 640² | `DPs/Sajjad.jpg` | spare — second photo of Sajjad |
 | `wh-leather.jpg` 1000×669 | `1 (4).jpg` | Home case 1, Case study 1, Case-studies CTA |
 | `wh-dc.jpg` 545×316 | `1 (2).jpg` | Home case 2, Case study 2, About CTA |
 | `wh-grocery.jpg` 612×408 | `1 (5).jpg` | Home case 3, Case study 3, Services CTA |
@@ -42,28 +50,24 @@ To regenerate after adding or replacing source images, re-run the Pillow resize 
 
 Search the codebase for `TODO`, `[ ` and `needs-content` to find every placeholder.
 
-1. **Identity of the portraits** — `DPs/` contains four photos of four different people.
-   Confirm which image is actually Mohsin and which is actually Sajjad before this site
-   is shown to a client or put behind ads. Currently the filenames are trusted:
-   `Mohsin.png` → Mohsin, `Sajjad.png` → Sajjad.
-2. **Testimonials** — 3 blocks on `index.html` and 3 on `case-studies.html` carry the
+1. **Testimonials** — 3 blocks on `index.html` and 3 on `case-studies.html` carry the
    `needs-content` class (dashed bronze border). The *metrics* shown alongside them are
    real; only the quote, name, title and company need filling. Remove `needs-content`
    once done.
-3. **Phone number** — header on all five pages uses `+1 (555) 010-0199`, a reserved
+2. **Phone number** — header on all five pages uses `+1 (555) 010-0199`, a reserved
    fictional number. Replace with a real US virtual number (Google Voice / OpenPhone)
    in both the `href="tel:"` and the visible text.
-4. **Contact form** — `contact.html` posts to `https://formspree.io/f/YOUR_FORM_ID`.
+3. **Contact form** — `contact.html` posts to `https://formspree.io/f/YOUR_FORM_ID`.
    Create a free form at [formspree.io](https://formspree.io) or
    [web3forms.com](https://web3forms.com) and replace the ID.
-5. **Contact details** — email, Calendly link, WhatsApp number and LinkedIn URL are
+4. **Contact details** — email, Calendly link, WhatsApp number and LinkedIn URL are
    placeholders in `contact.html` and in every page footer.
-6. **Certification badges** — `index.html` marks QuickBooks ProAdvisor and Xero Advisor
+5. **Certification badges** — `index.html` marks QuickBooks ProAdvisor and Xero Advisor
    as `class="badge pending"` with "in progress". Remove `pending` and the "in progress"
    text only once the certification is actually earned.
-7. **Sajjad's surname** — marked `[ surname to confirm ]` in `index.html` and `about.html`.
-8. **Business address** — US B2B buyers look for one. Add to the footer.
-9. **Domain** — decide the real domain, then update `hello@stockledger.co` throughout.
+6. **Sajjad's surname** — marked `[ surname to confirm ]` in `index.html` and `about.html`.
+7. **Business address** — US B2B buyers look for one. Add to the footer.
+8. **Domain** — decide the real domain, then update `hello@stockledger.co` throughout.
 
 ### Image upgrades worth making
 

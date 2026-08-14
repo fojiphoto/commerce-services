@@ -434,10 +434,9 @@ section { padding: 88px 0; }
   border: 1px solid var(--line-strong);
 }
 .person-photo-lg {
-  width: 100%; aspect-ratio: 1 / 1;
+  display: block; width: 100%; max-width: 262px; aspect-ratio: 4 / 5;
   border-radius: var(--radius); object-fit: cover; object-position: center top;
-  border: 1px solid var(--line-strong); margin-bottom: 22px;
-  filter: saturate(.94) contrast(1.02);
+  border: 1px solid var(--line-strong); margin-bottom: 24px;
 }
 .bio-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
 .bio-grid { display: grid; grid-template-columns: 240px 1fr; gap: 30px; align-items: start; }
