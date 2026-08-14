@@ -16,20 +16,63 @@ No build step, no framework, no CDN. Plain HTML + one stylesheet.
 | `contact.html` | Lead form + direct contact details |
 | `assets/styles.css` | Entire design system |
 
+## Images
+
+Source files live in `assets/DPs/` and `assets/Hardies WearHouse/`.
+Web-optimised derivatives are generated into `assets/img/` and are what the pages use.
+
+| File in `assets/img/` | Source | Used on |
+|---|---|---|
+| `mohsin.jpg` 900² | `DPs/Mohsin.png` | Home team, About bio |
+| `sajjad.jpg` 900² | `DPs/Sajjad.png` | Home team, About bio |
+| `mohsin-alt.jpg` 900² | `DPs/Mohsin 2.png` | **unused** — different person, see below |
+| `sajjad-alt.jpg` 640² | `DPs/Sajjad.jpg` | **unused** — different person, see below |
+| `wh-leather.jpg` 1000×669 | `1 (4).jpg` | Home case 1, Case study 1, Case-studies CTA |
+| `wh-dc.jpg` 545×316 | `1 (2).jpg` | Home case 2, Case study 2, About CTA |
+| `wh-grocery.jpg` 612×408 | `1 (5).jpg` | Home case 3, Case study 3, Services CTA |
+| `wh-racking.jpg` 600×600 | `1 (3).jpg` | Case study 4, Home CTA band |
+| `wh-retail.jpg` 348² | `1 (1).jpg` | **unused** — too low resolution |
+
+Warehouse photos are captioned as illustrative, never as the team's own facility.
+
+To regenerate after adding or replacing source images, re-run the Pillow resize step
+(square top-biased crop for portraits, width-capped resize for scenes, JPEG q82–84).
+
 ## Before launch — outstanding items
 
 Search the codebase for `TODO`, `[ ` and `needs-content` to find every placeholder.
 
-1. **Testimonials** — 3 blocks on `index.html` and 3 on `case-studies.html` are marked
-   with the `needs-content` class (dashed bronze border). Replace with real names,
-   titles, companies and quotes. Delete the `needs-content` class once filled.
-2. **Contact form** — `contact.html` posts to `https://formspree.io/f/YOUR_FORM_ID`.
+1. **Identity of the portraits** — `DPs/` contains four photos of four different people.
+   Confirm which image is actually Mohsin and which is actually Sajjad before this site
+   is shown to a client or put behind ads. Currently the filenames are trusted:
+   `Mohsin.png` → Mohsin, `Sajjad.png` → Sajjad.
+2. **Testimonials** — 3 blocks on `index.html` and 3 on `case-studies.html` carry the
+   `needs-content` class (dashed bronze border). The *metrics* shown alongside them are
+   real; only the quote, name, title and company need filling. Remove `needs-content`
+   once done.
+3. **Phone number** — header on all five pages uses `+1 (555) 010-0199`, a reserved
+   fictional number. Replace with a real US virtual number (Google Voice / OpenPhone)
+   in both the `href="tel:"` and the visible text.
+4. **Contact form** — `contact.html` posts to `https://formspree.io/f/YOUR_FORM_ID`.
    Create a free form at [formspree.io](https://formspree.io) or
    [web3forms.com](https://web3forms.com) and replace the ID.
-3. **Contact details** — email, Calendly link, WhatsApp number and LinkedIn URL are
+5. **Contact details** — email, Calendly link, WhatsApp number and LinkedIn URL are
    placeholders in `contact.html` and in every page footer.
-4. **Sajjad's surname** — marked `[ surname to confirm ]` in `index.html` and `about.html`.
-5. **Domain** — decide the real domain, then update `hello@stockledger.co` throughout.
+6. **Certification badges** — `index.html` marks QuickBooks ProAdvisor and Xero Advisor
+   as `class="badge pending"` with "in progress". Remove `pending` and the "in progress"
+   text only once the certification is actually earned.
+7. **Sajjad's surname** — marked `[ surname to confirm ]` in `index.html` and `about.html`.
+8. **Business address** — US B2B buyers look for one. Add to the footer.
+9. **Domain** — decide the real domain, then update `hello@stockledger.co` throughout.
+
+### Image upgrades worth making
+
+- Higher-resolution warehouse photography (1600px+ wide). The current scene photos are
+  545–1000px, which limits them to cards and heavily-overlaid background bands.
+- An environment portrait of each person (on the warehouse floor, tablet in hand) to sit
+  alongside the headshots.
+- Screenshots of real anonymised deliverables to replace or supplement the CSS mockups
+  in `services.html` and `case-studies.html`.
 
 ## Local preview
 

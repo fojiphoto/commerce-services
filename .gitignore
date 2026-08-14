@@ -1,0 +1,11 @@
+# Source image folders — kept locally, not published.
+# Only the optimised derivatives in assets/img/ that the site actually uses are committed.
+assets/DPs/
+assets/Hardies WearHouse/
+
+# Optimised derivatives that are generated but not used on any page.
+# These are portraits of people not identified on the site, and one photo below
+# usable resolution. No reason to publish them.
+assets/img/mohsin-alt.jpg
+assets/img/sajjad-alt.jpg
+assets/img/wh-retail.jpg

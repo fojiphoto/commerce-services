@@ -423,8 +423,159 @@ section { padding: 88px 0; }
 .center { text-align: center; }
 .lead { font-size: 1.1rem; color: var(--ink-2); }
 
+/* ==========================================================================
+   IMAGERY & TRUST ELEMENTS
+   ========================================================================== */
+
+/* ---------- Person photos ---------- */
+.person-photo {
+  width: 76px; height: 76px; flex: none;
+  border-radius: var(--radius); object-fit: cover; object-position: center top;
+  border: 1px solid var(--line-strong);
+}
+.person-photo-lg {
+  width: 100%; aspect-ratio: 1 / 1;
+  border-radius: var(--radius); object-fit: cover; object-position: center top;
+  border: 1px solid var(--line-strong); margin-bottom: 22px;
+  filter: saturate(.94) contrast(1.02);
+}
+.bio-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+.bio-grid { display: grid; grid-template-columns: 240px 1fr; gap: 30px; align-items: start; }
+.bio-grid .person-photo-lg { margin-bottom: 0; }
+
+/* Avatar with photo (testimonials) */
+.avatar-img {
+  width: 46px; height: 46px; flex: none; border-radius: var(--radius);
+  object-fit: cover; object-position: center top; border: 1px solid var(--line-strong);
+}
+
+/* ---------- Case study imagery ---------- */
+.case-img {
+  width: 100%; aspect-ratio: 16 / 10; object-fit: cover;
+  display: block; border-bottom: 1px solid var(--line);
+  filter: saturate(.9) contrast(1.03);
+}
+.case-figure { margin: 0 0 26px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-tint); }
+.case-figure img { width: 100%; display: block; filter: saturate(.9) contrast(1.03); }
+.case-figure figcaption {
+  padding: 11px 16px; font-size: .78rem; color: var(--ink-3);
+  background: var(--bg-soft); border-top: 1px solid var(--line);
+  letter-spacing: .02em;
+}
+
+/* ---------- Photo band (image + dark overlay) ---------- */
+.photo-band {
+  position: relative; background: var(--navy-800);
+  background-size: cover; background-position: center;
+  color: #fff; padding: 96px 0; text-align: center;
+}
+.photo-band::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,27,42,.90), rgba(13,27,42,.82));
+}
+.photo-band > .wrap { position: relative; z-index: 1; }
+.photo-band h2 { color: #fff; }
+.photo-band p { color: #c3cbd0; }
+
+/* ---------- Hero side image ---------- */
+.hero-photo {
+  width: 100%; border-radius: var(--radius); border: 1px solid var(--line-strong);
+  object-fit: cover; aspect-ratio: 4 / 3; filter: saturate(.9) contrast(1.03);
+}
+
+/* ---------- Tool / platform row ---------- */
+.toolrow { background: var(--bg-soft); border-bottom: 1px solid var(--line); padding: 26px 0; }
+.toolrow-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 14px 38px; }
+.toolrow-label {
+  font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-3); margin-right: 6px;
+}
+.tool {
+  font-family: var(--serif); font-size: 1.02rem; font-weight: 700; color: var(--ink-2);
+  letter-spacing: -.01em; opacity: .78; white-space: nowrap;
+}
+
+/* ---------- Credential badges ---------- */
+.badge-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  border: 1px solid var(--line-strong); background: #fff;
+  border-radius: var(--radius); padding: 9px 15px;
+  font-size: .84rem; font-weight: 600; color: var(--ink-2);
+}
+.badge b { color: var(--ink); }
+.badge-mark {
+  width: 24px; height: 24px; flex: none; border-radius: 3px;
+  background: var(--navy-800); color: var(--bronze-light);
+  display: grid; place-items: center; font-size: .68rem; font-weight: 800;
+  font-family: var(--serif);
+}
+.badge.pending { border-style: dashed; border-color: var(--bronze); background: #fdf9f2; color: var(--bronze-dark); }
+
+/* ---------- Header phone ---------- */
+.nav-phone {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: .92rem; font-weight: 650; color: var(--ink); text-decoration: none;
+  letter-spacing: .01em;
+}
+.nav-phone span { color: var(--bronze-dark); font-size: 1rem; }
+.nav-phone:hover { color: var(--bronze-dark); }
+
+/* ---------- Metric testimonials ---------- */
+.quote-metrics {
+  display: flex; gap: 26px; padding: 16px 0 4px; margin-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.quote-metric b {
+  display: block; font-family: var(--serif); font-size: 1.5rem;
+  font-weight: 700; color: var(--bronze-dark); line-height: 1.1;
+}
+.quote-metric span { font-size: .74rem; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; }
+
+/* ---------- Deliverable mock (cost model / report) ---------- */
+.mock {
+  background: #fff; border: 1px solid var(--line-strong);
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+}
+.mock-top {
+  background: var(--navy-800); color: #fff; padding: 13px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+}
+.mock-top span:last-child { color: var(--bronze-light); letter-spacing: .04em; text-transform: none; }
+.mock table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.mock th {
+  text-align: left; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3); font-weight: 700; padding: 11px 20px;
+  background: var(--bg-soft); border-bottom: 1px solid var(--line);
+}
+.mock th.r, .mock td.r { text-align: right; }
+.mock td { padding: 11px 20px; border-bottom: 1px solid var(--bg-tint); color: var(--ink-2); }
+.mock tr:nth-child(even) td { background: #fcfbf8; }
+.mock td.n { font-family: var(--font-num); font-size: .85rem; color: var(--ink); }
+.mock tr.total td {
+  background: var(--bronze-soft) !important; font-weight: 700; color: var(--ink);
+  border-top: 1.5px solid var(--bronze); border-bottom: 0;
+}
+.mock tr.total td.n { color: var(--bronze-dark); }
+.mock-foot {
+  background: var(--bg-soft); border-top: 1px solid var(--line);
+  padding: 13px 20px; font-size: .8rem; color: var(--ink-3);
+  display: flex; justify-content: space-between; gap: 14px;
+}
+.mock-foot strong { color: var(--green); }
+
+/* Split section: text one side, mock/photo other */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.split.rev > *:first-child { order: 2; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
+  .bio-grid { grid-template-columns: 1fr; }
+  .bio-grid .person-photo-lg { max-width: 240px; }
+  .split { grid-template-columns: 1fr; gap: 34px; }
+  .split.rev > *:first-child { order: 0; }
+  .nav-phone { display: none; }
   .hero-grid { grid-template-columns: 1fr; gap: 44px; }
   .g-4 { grid-template-columns: repeat(2, 1fr); }
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
@@ -450,8 +601,17 @@ section { padding: 88px 0; }
   .svc-list { columns: 1; }
   .foot-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 820px) {
+  .photo-band { padding: 68px 0; }
+  .toolrow-inner { gap: 12px 24px; }
+  .tool { font-size: .92rem; }
+  .quote-metrics { gap: 20px; }
+  .mock table { font-size: .82rem; }
+  .mock th, .mock td { padding: 10px 14px; }
+}
 @media (max-width: 480px) {
   .g-4 { grid-template-columns: 1fr; }
+  .quote-metrics { flex-wrap: wrap; gap: 16px 24px; }
   .trust-grid { grid-template-columns: 1fr; }
   .trust-grid > div:nth-child(2n) { border-left: 0; }
   .case-metrics { grid-template-columns: 1fr; }
