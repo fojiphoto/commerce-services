@@ -96,8 +96,7 @@
            '<p>We reply within 12 hours, Monday to Saturday.</p>',
       opts: [
         { label: 'Open the form', href: 'contact.html', primary: true },
-        // TODO: update this address when the real domain is decided.
-        { label: 'Email us instead', href: 'mailto:hello@stockledger.co' },
+        { label: 'Email us instead', href: 'mailto:Contact@factorialstudio.com' },
         { label: 'Something else', to: 'start', back: true }
       ]
     }

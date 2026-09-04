@@ -420,7 +420,17 @@ section { padding: 88px 0; }
 .site-foot li { margin-bottom: 9px; }
 .site-foot a { text-decoration: none; color: #8fa0b3; transition: color .15s; }
 .site-foot a:hover { color: var(--bronze-light); }
-.foot-bot { border-top: 1px solid rgba(255,255,255,.1); padding-top: 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .84rem; }
+.foot-legal {
+  border-top: 1px solid rgba(255,255,255,.1); padding-top: 26px;
+  font-size: .84rem; line-height: 1.7;
+}
+.foot-legal p { margin: 0 0 6px; }
+.foot-legal p:last-child { margin: 0; }
+.foot-legal b { color: #c3cbd6; font-weight: 650; }
+.foot-legal a { color: #8fa0b3; }
+.foot-legal a:hover { color: var(--bronze-light); }
+.foot-sep { color: #4d5c6e; margin: 0 4px; }
+.foot-bot { border-top: 1px solid rgba(255,255,255,.1); margin-top: 24px; padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .84rem; }
 
 /* ---------- Sub-page hero ---------- */
 .page-hero { background: var(--bg-soft); padding: 68px 0 62px; border-bottom: 1px solid var(--line); }

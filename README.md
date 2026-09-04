@@ -148,45 +148,61 @@ re-emit the `.webp`, `-sm` and `og-cover` derivatives.
 
 Warehouse photos are captioned as illustrative, never as the team's own facility.
 
+## The business behind the site
+
+| | |
+|---|---|
+| Brand shown on the site | **StockLedger** |
+| Registered entity (FBR) | **MS Business Solutions** |
+| Umbrella company | **Factorial Studio (Private) Limited** |
+| Office | Tariq Business Center, Johar Town, Lahore, Pakistan |
+| Phone | +92 321 418 5914 |
+| Email | Contact@factorialstudio.com |
+
+The phone is stored and linked in **international format** (`tel:+923214185914`). The
+local `0321…` form cannot be dialled from the US, UK, Canada or the Gulf, which is the
+entire target market — don't change it back.
+
+These appear in the footer of all 8 pages, on the contact page, in `privacy.html`, in
+`vera.js`, and in the JSON-LD (`legalName`, `telephone`, `email`, `address`,
+`parentOrganization`). Change one, change all of them.
+
 ## Before launch — outstanding items
 
-These need information only you have. Search for `TODO` to find each one in place.
-
-1. **Phone number** — `+1 (555) 010-0199` is a reserved fictional number, used in the
-   header and the mobile menu of all 8 pages. Replace in both the `href="tel:"` and the
-   visible text. It is deliberately **not** in the JSON-LD, so nothing fictional reaches
-   Google; add `telephone` to the `ProfessionalService` node once it is real.
-2. **Contact form** — `contact.html` still posts to
+1. **Contact form** — `contact.html` still posts to
    `https://formspree.io/f/YOUR_FORM_ID`. **Until you replace that ID the form silently
    discards every lead.** Create a form at [formspree.io](https://formspree.io) or
    [web3forms.com](https://web3forms.com). The redirect to `thanks.html`, the subject
    line and the spam honeypot are already wired.
-3. **Email address** — `hello@stockledger.co` is still used in every footer, on the
-   contact page, in `privacy.html` and in `vera.js`. **`stockledger.co` is not our
-   domain** — it redirects to `www.stockedger.co`, an unrelated site — so mail sent
-   there does not reach us. Replace it with a real address before promoting the site.
 
-4. **Domain** — the site is live at `https://factorialstudio.com/commerce-services/`,
-   and every `canonical`, Open Graph tag, `sitemap.xml`, `robots.txt` entry and the
-   form's `_next` now point there. If a dedicated domain is bought later, replace the
-   base URL in all of those.
-5. **Contact details** — email, Calendly link, WhatsApp number and LinkedIn URL. These
-   currently render as plain text (`WhatsApp — coming soon`) rather than dead links;
-   restore them as `<a href="...">` once the URLs exist.
-6. **Testimonials** — three on `index.html` and three on `case-studies.html` are
+2. **Privacy policy** — the company details are correct now, but two things still want a
+   professional eye before you promote the site to UK/EU buyers: the retention period,
+   and the wording on international transfers. The site discloses plainly that data is
+   handled in Lahore and that Pakistan has no UK/EU adequacy decision — that disclosure
+   should stay, but have an adviser confirm the framing. Delete the note box on the page
+   once that is done.
+
+3. **Testimonials** — three on `index.html` and three on `case-studies.html` are
    **commented out**, not deleted. Ship them by pasting the real quote, name, title and
    company into each figure and removing `class="needs-content"`. They were hidden
    because publishing `[ REVIEW #1 ]` placeholders contradicts the site's own stated
    policy on invented testimonials.
-7. **Sajjad's surname** — marked `[ surname to confirm ]` in `index.html` and `about.html`.
-8. **Business address** — US B2B buyers look for one. Footer and privacy page both have
-   a marked slot; add `address` to the JSON-LD at the same time.
-9. **Certification badges** — QuickBooks ProAdvisor and Xero Advisor are marked
+
+4. **Sajjad's surname** — marked `[ surname to confirm ]` in `index.html` and `about.html`.
+
+5. **Remaining contact routes** — Calendly, WhatsApp and LinkedIn render as plain text
+   (`WhatsApp — coming soon`) rather than dead links. Restore them as `<a href="...">`
+   once the URLs exist. The phone is a mobile, so it may well take WhatsApp — the
+   contact page says "to be confirmed" rather than assuming.
+
+6. **Certification badges** — QuickBooks ProAdvisor and Xero Advisor are marked
    `class="badge pending"` with "in progress". Remove `pending` and that text only once
    the certification is actually earned.
-10. **Privacy policy** — `privacy.html` describes how the site genuinely behaves today,
-   but the controller name, business address and retention period need a legal review
-   for your jurisdiction. Delete the yellow note box when that is done.
+
+7. **Domain** — the site is live at `https://factorialstudio.com/commerce-services/`,
+   and every `canonical`, Open Graph tag, `sitemap.xml`, `robots.txt` entry and the
+   form's `_next` point there. If a dedicated domain is bought later, replace the base
+   URL in all of those.
 
 ### Nice to have
 
