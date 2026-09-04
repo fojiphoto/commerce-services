@@ -96,6 +96,15 @@ the cells do, so at 34 the fill is dammed at every line and leaves a speckled sq
 behind. Several automatic ways of detecting that were tried and each one misfired on a
 different image, so the value is simply pinned per file.
 
+### Tile washes
+
+Each service-card tile takes a very light wash sampled from its own illustration: the
+dominant hue of the opaque pixels (ignoring the near-black outline and the near-white
+paper), pushed to about 94% lightness. That way the ground always agrees with the art
+sitting on it, and stays quiet enough not to fight the navy and bronze around it. The
+values are pinned in `styles.css` as `.icon-*` classes — resample them if the artwork
+is replaced.
+
 ### Two things to know
 
 **No icon for the FIFO chip yet.** The hero originally had three chips; the middle one
