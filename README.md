@@ -167,6 +167,19 @@ These appear in the footer of all 8 pages, on the contact page, in `privacy.html
 `vera.js`, and in the JSON-LD (`legalName`, `telephone`, `email`, `address`,
 `parentOrganization`). Change one, change all of them.
 
+**Where the names appear on the home page**
+
+- A dedicated **The Practice** band (`.firm-band`) sits between the team section and
+  Credentials, with *MS Business Solutions* as its heading and a three-column row for
+  the registered name, the partnership and the office.
+- Every footer carries a labelled **In partnership with — Factorial Studio (Private)
+  Limited** line above the copyright.
+
+**On the wording.** The site says *in partnership with*, not *acquired by* or *a
+Factorial Studio company*. Those describe a change of ownership; what was described was
+a collaboration under one umbrella. Only change this if an actual acquisition completes,
+because it is a claim a client or a bank could rely on.
+
 ## Before launch — outstanding items
 
 1. **Contact form** — `contact.html` still posts to

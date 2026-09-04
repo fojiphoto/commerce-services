@@ -422,7 +422,7 @@ section { padding: 88px 0; }
 .site-foot a:hover { color: var(--bronze-light); }
 .foot-legal {
   border-top: 1px solid rgba(255,255,255,.1); padding-top: 26px;
-  font-size: .84rem; line-height: 1.7;
+  font-size: .84rem; line-height: 1.7; text-align: center;
 }
 .foot-legal p { margin: 0 0 6px; }
 .foot-legal p:last-child { margin: 0; }
@@ -430,7 +430,7 @@ section { padding: 88px 0; }
 .foot-legal a { color: #8fa0b3; }
 .foot-legal a:hover { color: var(--bronze-light); }
 .foot-sep { color: #4d5c6e; margin: 0 4px; }
-.foot-bot { border-top: 1px solid rgba(255,255,255,.1); margin-top: 24px; padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .84rem; }
+.foot-bot { border-top: 1px solid rgba(255,255,255,.1); margin-top: 26px; padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .84rem; }
 
 /* ---------- Sub-page hero ---------- */
 .page-hero { background: var(--bg-soft); padding: 68px 0 62px; border-bottom: 1px solid var(--line); }
@@ -843,6 +843,46 @@ section { padding: 88px 0; }
   .vera-launch { transition: none; }
   .vera-launch:hover { transform: none; }
 }
+
+/* ---------- Firm identity band ---------- */
+.firm-band { background: var(--navy-800); color: #b9c3d0; text-align: center; }
+.firm-band .eyebrow { color: var(--bronze-light); border-bottom-color: var(--bronze); }
+.firm-band h2 { color: #fff; font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 18px; }
+.firm-lead { font-size: 1.06rem; color: #b9c3d0; max-width: 660px; margin: 0 auto; }
+
+.firm-meta {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  margin-top: 44px; border-top: 1px solid rgba(255,255,255,.14);
+}
+.firm-meta > div { padding: 24px 18px; }
+.firm-meta > div + div { border-left: 1px solid rgba(255,255,255,.14); }
+.firm-meta b {
+  display: block; font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: #8fa0b3; margin-bottom: 8px;
+}
+.firm-meta span { font-family: var(--serif); font-size: 1rem; color: #fff; line-height: 1.4; }
+
+@media (max-width: 760px) {
+  .firm-meta { grid-template-columns: 1fr; }
+  .firm-meta > div + div { border-left: 0; border-top: 1px solid rgba(255,255,255,.14); }
+}
+
+/* ---------- Footer partnership line ---------- */
+.foot-partner {
+  margin-top: 26px; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px; flex-wrap: wrap; text-align: center;
+}
+.foot-partner-label {
+  font-size: .72rem; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: #7e8ea1;
+}
+.foot-partner-name {
+  font-family: var(--serif); font-size: 1.12rem; font-weight: 700; color: #fff;
+  letter-spacing: -.01em;
+}
+.foot-partner-name em { font-style: normal; font-weight: 400; color: #8fa0b3; font-size: .92rem; }
 
 /* ---------- Tool / platform row ---------- */
 .toolrow { background: var(--bg-soft); border-bottom: 1px solid var(--line); padding: 26px 0; }
