@@ -13,8 +13,9 @@
   --navy-600: #2c4f74;
 
   /* Accent — bronze / ledger gold */
-  --bronze: #a8763e;
+  --bronze: #9c6b36;
   --bronze-dark: #8a5f30;
+  --bronze-deep: #744f27;
   --bronze-light: #c99a5b;
   --bronze-soft: #f4ecdf;
 
@@ -27,7 +28,7 @@
   /* Neutrals — warm, paper-like */
   --ink: #1a2332;
   --ink-2: #3d4a5c;
-  --ink-3: #6b7686;
+  --ink-3: #5c6878;
   --line: #e0dcd4;
   --line-strong: #cfc9be;
   --bg: #fdfcfa;
@@ -60,7 +61,35 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; display: block; }
+picture { display: block; }
 a { color: inherit; }
+
+/* Keyboard focus — visible on every interactive element, never on mouse click. */
+:focus-visible {
+  outline: 2px solid var(--bronze-dark);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+.photo-band :focus-visible, .hero-dark :focus-visible,
+.sec-dark :focus-visible, .site-foot :focus-visible {
+  outline-color: var(--bronze-light);
+}
+
+/* Visually hidden, still read by screen readers. */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+/* Skip link — first tab stop on every page. */
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--navy-800); color: #fff; text-decoration: none;
+  padding: 12px 20px; border-radius: var(--radius);
+  font-size: .92rem; font-weight: 650; box-shadow: var(--shadow-lg);
+  transition: top .16s ease;
+}
+.skip-link:focus { top: 12px; }
 h1, h2, h3, h4 {
   font-family: var(--serif);
   color: var(--ink);
@@ -104,6 +133,10 @@ section { padding: 88px 0; }
 .sec-head.center .eyebrow { border-bottom: 0; padding-bottom: 0; }
 
 .grid { display: grid; gap: 26px; }
+/* Grid items default to min-width:auto, so the widest unbreakable content inside a
+   column (the ledger card's SKU rows, a long <option>) can push the track past the
+   viewport on narrow phones. Let tracks shrink and the text wrap instead. */
+.grid > *, .hero-grid > *, .split > *, .video-grid > *, .recon-row > * { min-width: 0; }
 .g-2 { grid-template-columns: repeat(2, 1fr); }
 .g-3 { grid-template-columns: repeat(3, 1fr); }
 .g-4 { grid-template-columns: repeat(4, 1fr); }
@@ -122,14 +155,12 @@ section { padding: 88px 0; }
   transition: background .18s ease, color .18s ease, border-color .18s ease;
   white-space: nowrap;
 }
-.btn-primary { background: var(--bronze); color: #fff; }
-.btn-primary:hover { background: var(--bronze-dark); }
+.btn-primary { background: var(--bronze-dark); color: #fff; }
+.btn-primary:hover { background: var(--bronze-deep); }
 .btn-ghost { background: transparent; color: var(--navy-800); border-color: var(--line-strong); }
 .btn-ghost:hover { border-color: var(--navy-800); background: var(--bg-tint); }
 .btn-navy { background: var(--navy-800); color: #fff; }
 .btn-navy:hover { background: var(--navy-700); }
-.btn-light { background: #fff; color: var(--navy-800); }
-.btn-light:hover { background: var(--bg-tint); }
 .btn-outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
 .btn-outline-light:hover { background: rgba(255,255,255,.1); border-color: #fff; }
 .btn-sm { padding: 10px 19px; font-size: .9rem; }
@@ -162,6 +193,7 @@ section { padding: 88px 0; }
 }
 .nav-links a:hover, .nav-links a.active { color: var(--bronze-dark); border-bottom-color: var(--bronze); }
 .nav-cta { display: flex; align-items: center; gap: 12px; }
+.nav-menu-cta, .nav-menu-phone { display: none; }
 .nav-toggle { display: none; background: none; border: 0; font-size: 1.6rem; color: var(--ink); cursor: pointer; padding: 4px 8px; }
 
 /* ---------- Hero ---------- */
@@ -228,7 +260,6 @@ section { padding: 88px 0; }
 .hero-card-foot strong { color: var(--green); }
 
 /* ---------- Trust bar ---------- */
-.trustbar { background: var(--navy-800); padding: 34px 0; }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
 .trust-grid > div + div { border-left: 1px solid rgba(255,255,255,.12); }
 .trust-num { font-family: var(--serif); font-size: 1.9rem; font-weight: 700; color: #fff; line-height: 1.1; }
@@ -346,12 +377,6 @@ section { padding: 88px 0; }
 
 /* ---------- People ---------- */
 .person { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: start; }
-.person-av {
-  width: 76px; height: 76px; border-radius: var(--radius); flex: none;
-  background: var(--navy-800); border: 1px solid var(--navy-700);
-  color: var(--bronze-light); display: grid; place-items: center;
-  font-family: var(--serif); font-size: 1.55rem; font-weight: 700;
-}
 .person h3 { margin-bottom: 2px; }
 .person-role { font-size: .87rem; color: var(--bronze-dark); font-weight: 650; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 14px; }
 .person p { font-size: .95rem; color: var(--ink-3); }
@@ -366,6 +391,7 @@ section { padding: 88px 0; }
   font-family: var(--serif); font-weight: 700; color: var(--ink); font-size: 1.06rem; position: relative;
 }
 .faq summary::-webkit-details-marker { display: none; }
+.faq summary:focus-visible { outline-offset: -3px; }
 .faq summary::after {
   content: "+"; position: absolute; right: 6px; top: 19px;
   font-family: var(--sans); font-size: 1.45rem; font-weight: 300; color: var(--bronze);
@@ -415,7 +441,7 @@ section { padding: 88px 0; }
 /* ---------- Detailed service block ---------- */
 .svc-block { display: grid; grid-template-columns: 300px 1fr; gap: 46px; padding: 46px 0; border-bottom: 1px solid var(--line); }
 .svc-block:last-child { border-bottom: 0; }
-.svc-side h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.svc-side h2 { font-size: 1.4rem; margin-bottom: 10px; }
 .svc-side .price { font-size: 1.5rem; }
 .svc-side p { font-size: .92rem; color: var(--ink-3); }
 .svc-list { columns: 2; column-gap: 34px; list-style: none; padding: 0; margin: 0; }
@@ -429,8 +455,6 @@ section { padding: 88px 0; }
 }
 .note-box strong { color: #3d2a12; }
 .divider { height: 1px; background: var(--line); border: 0; margin: 0; }
-.mt-0 { margin-top: 0; }
-.mb-0 { margin-bottom: 0; }
 .center { text-align: center; }
 .lead { font-size: 1.1rem; color: var(--ink-2); }
 
@@ -449,15 +473,6 @@ section { padding: 88px 0; }
   border-radius: var(--radius); object-fit: cover; object-position: center top;
   border: 1px solid var(--line-strong); margin-bottom: 24px;
 }
-.bio-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
-.bio-grid { display: grid; grid-template-columns: 240px 1fr; gap: 30px; align-items: start; }
-.bio-grid .person-photo-lg { margin-bottom: 0; }
-
-/* Avatar with photo (testimonials) */
-.avatar-img {
-  width: 46px; height: 46px; flex: none; border-radius: var(--radius);
-  object-fit: cover; object-position: center top; border: 1px solid var(--line-strong);
-}
 
 /* ---------- Case study imagery ---------- */
 .case-img {
@@ -473,10 +488,33 @@ section { padding: 88px 0; }
   letter-spacing: .02em;
 }
 
+/* ---------- Full-bleed photo backgrounds ----------
+   Declared twice on purpose: browsers without image-set() keep the JPEG line,
+   the rest take the WebP. Paths are relative to this stylesheet. */
+.bg-wh-hero    { background-image: url('img/wh-hero.jpg'); }
+.bg-wh-aisle   { background-image: url('img/wh-aisle.jpg'); }
+.bg-wh-leather { background-image: url('img/wh-leather.jpg'); }
+.bg-wh-grocery { background-image: url('img/wh-grocery.jpg'); }
+.bg-wh-retail  { background-image: url('img/wh-retail.jpg'); }
+
+.bg-wh-hero    { background-image: image-set(url('img/wh-hero.webp')    type('image/webp'), url('img/wh-hero.jpg')    type('image/jpeg')); }
+.bg-wh-aisle   { background-image: image-set(url('img/wh-aisle.webp')   type('image/webp'), url('img/wh-aisle.jpg')   type('image/jpeg')); }
+.bg-wh-leather { background-image: image-set(url('img/wh-leather.webp') type('image/webp'), url('img/wh-leather.jpg') type('image/jpeg')); }
+.bg-wh-grocery { background-image: image-set(url('img/wh-grocery.webp') type('image/webp'), url('img/wh-grocery.jpg') type('image/jpeg')); }
+.bg-wh-retail  { background-image: image-set(url('img/wh-retail.webp')  type('image/webp'), url('img/wh-retail.jpg')  type('image/jpeg')); }
+
+/* Phones pull a 1200px crop of the two heaviest images instead of the 1800-2000px master. */
+@media (max-width: 820px) {
+  .bg-wh-hero  { background-image: url('img/wh-hero-sm.jpg'); }
+  .bg-wh-aisle { background-image: url('img/wh-aisle-sm.jpg'); }
+  .bg-wh-hero  { background-image: image-set(url('img/wh-hero-sm.webp')  type('image/webp'), url('img/wh-hero-sm.jpg')  type('image/jpeg')); }
+  .bg-wh-aisle { background-image: image-set(url('img/wh-aisle-sm.webp') type('image/webp'), url('img/wh-aisle-sm.jpg') type('image/jpeg')); }
+}
+
 /* ---------- Photo band (image + dark overlay) ---------- */
 .photo-band {
-  position: relative; background: var(--navy-800);
-  background-size: cover; background-position: center;
+  position: relative; background-color: var(--navy-800);
+  background-size: cover; background-position: center; background-repeat: no-repeat;
   color: #fff; padding: 96px 0; text-align: center;
 }
 .photo-band::before {
@@ -487,26 +525,38 @@ section { padding: 88px 0; }
 .photo-band h2 { color: #fff; }
 .photo-band p { color: #c3cbd0; }
 
-/* ---------- Hero side image ---------- */
-.hero-photo {
-  width: 100%; border-radius: var(--radius); border: 1px solid var(--line-strong);
-  object-fit: cover; aspect-ratio: 4 / 3; filter: saturate(.9) contrast(1.03);
-}
-
 /* ==========================================================================
    DARK PHOTO HERO
    Full-bleed warehouse photograph, navy wash, white type, ledger card on top.
    ========================================================================== */
 .hero-dark {
   position: relative; isolation: isolate;
-  background: var(--navy-900) center/cover no-repeat;
+  background-color: var(--navy-900);
+  background-position: center; background-size: cover; background-repeat: no-repeat;
   border-bottom: 0; padding: 86px 0 0;
   color: #cdd5df;
 }
 .hero-dark::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
+  /* Held at >=.88 across the left 52% (where all the type sits) so even the blown-out
+     highlights in the photo keep white text above 4.5:1, then falls away to .50 on the
+     right so the warehouse is actually visible. Verified against the brightest pixel
+     under the text column, not the average. */
   background:
-    linear-gradient(100deg, rgba(7,16,28,.96) 0%, rgba(9,20,34,.90) 42%, rgba(11,24,40,.74) 100%);
+    linear-gradient(100deg, rgba(7,16,28,.92) 0%, rgba(9,20,34,.88) 52%, rgba(11,24,40,.50) 100%);
+  /* .hero::before also matches this element and sets opacity + a fade-out mask for the
+     light hero's rule-line texture. Both must be reset here or the navy wash renders at
+     ~17% and disappears entirely below 70% of the hero, leaving white type on bare photo. */
+  opacity: 1;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+/* Stacked layout puts type across the full width, so the wash has to be even. */
+@media (max-width: 980px) {
+  .hero-dark::before {
+    background: linear-gradient(180deg, rgba(7,16,28,.91), rgba(9,20,34,.88));
+  }
 }
 .hero-dark::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 2;
@@ -523,7 +573,63 @@ section { padding: 88px 0; }
 .hero-dark .btn-ghost { color: #fff; border-color: rgba(255,255,255,.38); }
 .hero-dark .btn-ghost:hover { background: rgba(255,255,255,.1); border-color: #fff; }
 .hero-dark .hero-grid { padding-bottom: 72px; }
+.hero-dark .hero-visual { margin: 58px 0; }
 .hero-dark .hero-card { box-shadow: 0 26px 60px rgba(0,0,0,.42); border-color: rgba(255,255,255,.16); }
+
+/* ---------- Floating chips around the ledger card ----------
+   Absolutely positioned so they read as hovering above the card, with a slow drift.
+   Purely decorative reinforcement: every claim here is stated properly elsewhere on
+   the page, and the whole visual is aria-hidden. */
+.hero-visual { position: relative; }
+
+.float-chip {
+  position: absolute; z-index: 3;
+  display: inline-flex; align-items: center; gap: 9px;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 9px 13px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.30);
+  font-size: .78rem; color: var(--ink-2); line-height: 1.3;
+  white-space: nowrap;
+  animation: chip-drift 7s ease-in-out infinite;
+}
+.float-chip b { display: block; color: var(--ink); font-size: .86rem; font-weight: 700; }
+.float-chip svg {
+  width: 19px; height: 19px; flex: none;
+  stroke: var(--bronze-dark); stroke-width: 1.7; fill: none;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+.float-chip-1 { top: -58px;    left: -26px;  animation-delay: 0s; }
+.float-chip-2 { bottom: -58px; left: -34px;  animation-delay: -2.4s; }
+.float-chip-3 { bottom: -58px; right: -18px; animation-delay: -4.8s; }
+
+@keyframes chip-drift {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+
+/* The drift is decoration; never move things for people who asked us not to. */
+@media (prefers-reduced-motion: reduce) {
+  .float-chip { animation: none; }
+}
+
+/* Below the hero's two-column breakpoint the card goes full width and there is no
+   gutter left for the chips to sit in, so they come off rather than overlap the copy. */
+@media (max-width: 1080px) {
+  .float-chip-1 { left: -8px; }
+  .float-chip-2 { left: -12px; }
+  .float-chip-3 { right: -4px; }
+}
+@media (max-width: 980px) {
+  .float-chip { display: none; }
+}
+
+/* ---------- Service card icons ---------- */
+.card-icon svg {
+  width: 23px; height: 23px;
+  stroke: currentColor; stroke-width: 1.6; fill: none;
+  stroke-linecap: round; stroke-linejoin: round;
+}
 
 /* Stat strip sitting inside the hero */
 .hero-stats-band { position: relative; background: rgba(6,14,25,.55); border-top: 1px solid rgba(255,255,255,.15); }
@@ -547,6 +653,187 @@ section { padding: 88px 0; }
   .hero-stats > div + div { border-left: 0; border-top: 1px solid rgba(255,255,255,.13); }
 }
 
+/* ==========================================================================
+   VIDEO — click-to-play facade
+   Nothing is requested from YouTube until the visitor presses play: the poster
+   is a local image and the <iframe> is only created on click. No autoplay.
+   ========================================================================== */
+.video-grid { display: grid; grid-template-columns: .88fr 1.12fr; gap: 56px; align-items: center; }
+.video-copy p { color: var(--ink-3); font-size: 1rem; }
+.video-points { list-style: none; padding: 0; margin: 24px 0 0; }
+.video-points li { position: relative; padding-left: 26px; font-size: .95rem; margin-bottom: 11px; color: var(--ink-2); }
+.video-points li::before { content: "✓"; position: absolute; left: 0; color: var(--bronze); font-weight: 800; }
+
+.video-card {
+  background: #fff; border: 1px solid var(--line-strong); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow-lg);
+}
+.video-frame {
+  position: relative; aspect-ratio: 16 / 9; background: var(--navy-900);
+  display: block; overflow: hidden;
+}
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* The whole poster is the button, so the click target is the video, not a small icon. */
+.video-play {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: grid; place-items: center; gap: 0;
+  border: 0; padding: 0; cursor: pointer; font-family: var(--sans);
+  background: linear-gradient(180deg, rgba(9,20,34,.30), rgba(9,20,34,.52));
+  transition: background .2s ease;
+}
+.video-play:hover { background: linear-gradient(180deg, rgba(9,20,34,.22), rgba(9,20,34,.46)); }
+.video-play:focus-visible { outline: 3px solid var(--bronze-light); outline-offset: -5px; }
+
+.video-play-ring {
+  width: 84px; height: 84px; border-radius: 50%;
+  background: var(--bronze-dark); border: 2px solid rgba(255,255,255,.34);
+  display: grid; place-items: center;
+  box-shadow: 0 10px 34px rgba(0,0,0,.42);
+  transition: transform .2s ease, background .2s ease;
+}
+.video-play:hover .video-play-ring { transform: scale(1.07); background: var(--bronze-deep); }
+.video-play:active .video-play-ring { transform: scale(.98); }
+/* Optical centring: a triangle looks off-centre when placed on the true centre. */
+.video-play-ring svg { width: 30px; height: 30px; fill: #fff; margin-left: 5px; }
+
+.video-play-label {
+  position: absolute; left: 0; right: 0; bottom: 22px;
+  font-size: .82rem; font-weight: 650; letter-spacing: .13em; text-transform: uppercase;
+  color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.6);
+}
+
+.video-foot {
+  background: var(--bg-soft); border-top: 1px solid var(--line);
+  padding: 14px 20px; font-size: .82rem; color: var(--ink-3);
+  display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.video-foot b { color: var(--ink); font-weight: 650; }
+.video-foot .video-src { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.video-foot .video-src::before {
+  content: ""; width: 9px; height: 9px; border-radius: 2px; background: var(--bronze); flex: none;
+}
+.video-note { font-size: .82rem; color: var(--ink-3); margin: 16px 0 0; }
+
+@media (max-width: 980px) {
+  .video-grid { grid-template-columns: 1fr; gap: 34px; }
+}
+@media (max-width: 520px) {
+  .video-play-ring { width: 66px; height: 66px; }
+  .video-play-ring svg { width: 24px; height: 24px; }
+  .video-play-label { bottom: 14px; font-size: .74rem; }
+}
+
+/* ==========================================================================
+   VERA - guided help widget
+   A menu, not a live chat. No backend, no storage, no network calls: every reply
+   is written into the page. It answers the handful of questions people actually
+   ask, then hands off to the real contact routes.
+   ========================================================================== */
+.vera-launch {
+  position: fixed; right: 22px; bottom: 22px; z-index: 90;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--bronze-dark); color: #fff;
+  border: 1px solid rgba(255,255,255,.22); border-radius: 40px;
+  padding: 13px 20px 13px 15px; cursor: pointer;
+  font-family: var(--sans); font-size: .92rem; font-weight: 650;
+  box-shadow: 0 10px 30px rgba(13,27,42,.34);
+  transition: background .18s ease, transform .18s ease;
+}
+.vera-launch:hover { background: var(--bronze-deep); transform: translateY(-2px); }
+.vera-launch svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.vera-launch[hidden] { display: none; }
+
+.vera-panel {
+  position: fixed; right: 22px; bottom: 22px; z-index: 91;
+  width: 370px; max-width: calc(100vw - 32px);
+  max-height: min(620px, calc(100vh - 44px));
+  display: flex; flex-direction: column;
+  background: var(--bg); border: 1px solid var(--line-strong);
+  border-radius: 10px; overflow: hidden;
+  box-shadow: 0 26px 70px rgba(13,27,42,.40);
+}
+.vera-panel[hidden] { display: none; }
+
+.vera-head {
+  background: var(--navy-800); color: #fff;
+  padding: 15px 16px; display: flex; align-items: center; gap: 12px; flex: none;
+}
+.vera-avatar {
+  width: 38px; height: 38px; flex: none; border-radius: 50%;
+  background: var(--bronze-dark); color: #fff;
+  display: grid; place-items: center;
+  font-family: var(--serif); font-size: 1.02rem; font-weight: 700;
+}
+.vera-who { flex: 1; min-width: 0; line-height: 1.3; }
+.vera-who b { display: block; font-size: .98rem; font-weight: 650; }
+.vera-who span { font-size: .75rem; color: #93a2b4; }
+.vera-x {
+  background: none; border: 0; color: #93a2b4; cursor: pointer;
+  font-size: 1.5rem; line-height: 1; padding: 4px 6px; border-radius: var(--radius-sm);
+}
+.vera-x:hover { color: #fff; }
+
+.vera-body {
+  flex: 1; overflow-y: auto; padding: 18px 16px 8px;
+  background: var(--bg-soft);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.vera-msg {
+  max-width: 88%; padding: 12px 15px; border-radius: 12px;
+  font-size: .91rem; line-height: 1.55;
+}
+.vera-msg p { margin: 0 0 .7em; }
+.vera-msg p:last-child { margin: 0; }
+.vera-msg.bot {
+  align-self: flex-start; background: #fff;
+  border: 1px solid var(--line); border-bottom-left-radius: 3px;
+  color: var(--ink-2);
+}
+.vera-msg.me {
+  align-self: flex-end; background: var(--navy-800); color: #e7edf4;
+  border-bottom-right-radius: 3px;
+}
+.vera-msg b { color: var(--ink); }
+.vera-msg.me b { color: #fff; }
+.vera-msg a { color: var(--bronze-dark); font-weight: 650; }
+
+.vera-opts {
+  flex: none; padding: 12px 16px 14px; background: var(--bg);
+  border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.vera-opt {
+  background: #fff; border: 1px solid var(--line-strong);
+  border-radius: 30px; padding: 9px 15px; cursor: pointer;
+  font-family: var(--sans); font-size: .86rem; font-weight: 600; color: var(--navy-800);
+  transition: background .15s, border-color .15s, color .15s;
+  text-decoration: none; display: inline-block;
+}
+.vera-opt:hover { background: var(--navy-800); border-color: var(--navy-800); color: #fff; }
+.vera-opt.primary { background: var(--bronze-dark); border-color: var(--bronze-dark); color: #fff; }
+.vera-opt.primary:hover { background: var(--bronze-deep); border-color: var(--bronze-deep); }
+.vera-opt.back { color: var(--ink-3); border-style: dashed; }
+
+.vera-foot {
+  flex: none; padding: 9px 16px 12px; background: var(--bg);
+  font-size: .73rem; color: var(--ink-3); text-align: center;
+}
+
+@media (max-width: 520px) {
+  .vera-launch { right: 14px; bottom: 14px; padding: 12px 17px 12px 13px; font-size: .88rem; }
+  .vera-panel {
+    right: 10px; left: 10px; bottom: 10px; width: auto;
+    max-height: calc(100vh - 20px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vera-launch { transition: none; }
+  .vera-launch:hover { transform: none; }
+}
+
 /* ---------- Tool / platform row ---------- */
 .toolrow { background: var(--bg-soft); border-bottom: 1px solid var(--line); padding: 26px 0; }
 .toolrow-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 14px 38px; }
@@ -555,8 +842,8 @@ section { padding: 88px 0; }
   color: var(--ink-3); margin-right: 6px;
 }
 .tool {
-  font-family: var(--serif); font-size: 1.02rem; font-weight: 700; color: var(--ink-2);
-  letter-spacing: -.01em; opacity: .78; white-space: nowrap;
+  font-family: var(--serif); font-size: 1.02rem; font-weight: 700; color: var(--ink-3);
+  letter-spacing: -.01em; white-space: nowrap;
 }
 
 /* ---------- Credential badges ---------- */
@@ -631,14 +918,10 @@ section { padding: 88px 0; }
 
 /* Split section: text one side, mock/photo other */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.split.rev > *:first-child { order: 2; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .bio-grid { grid-template-columns: 1fr; }
-  .bio-grid .person-photo-lg { max-width: 240px; }
   .split { grid-template-columns: 1fr; gap: 34px; }
-  .split.rev > *:first-child { order: 0; }
   .nav-phone { display: none; }
   .hero-grid { grid-template-columns: 1fr; gap: 44px; }
   .g-4 { grid-template-columns: repeat(2, 1fr); }
@@ -658,6 +941,22 @@ section { padding: 88px 0; }
   .nav-links a:hover, .nav-links a.active { border-bottom-color: var(--bg-tint); }
   .nav-toggle { display: block; }
   .nav-cta .btn { display: none; }
+
+  /* The header bar has no room for these on a phone, so they live in the menu instead.
+     Without them there is no route to contact from the header on mobile at all. */
+  .nav-links .nav-menu-cta {
+    display: block; margin-top: 14px; text-align: center;
+    background: var(--bronze-dark); color: #fff; border-radius: var(--radius);
+    padding: 14px 18px; font-size: .96rem; font-weight: 650; border-bottom: 0;
+  }
+  .nav-links .nav-menu-cta:hover {
+    background: var(--bronze-deep); color: #fff; border-bottom-color: transparent;
+  }
+  .nav-links .nav-menu-phone {
+    display: block; text-align: center; padding: 14px 0 4px;
+    font-size: .95rem; font-weight: 650; color: var(--ink); border-bottom: 0;
+  }
+  .nav-links .nav-menu-phone:hover { color: var(--bronze-dark); border-bottom-color: transparent; }
   .g-2, .g-3 { grid-template-columns: 1fr; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 26px; }
   .trust-grid > div + div { border-left: 0; }

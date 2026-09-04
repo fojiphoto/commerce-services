@@ -7,6 +7,24 @@
 <meta name="description" content="Book a free 30-minute inventory and books review. You get a written findings note listing what's inaccurate and what to fix first — whether you hire us or not.">
 <meta name="theme-color" content="#16283f">
 <link rel="stylesheet" href="assets/styles.css">
+<!-- TODO: swap stockledger.co for the real domain once decided (also in sitemap.xml). -->
+<link rel="canonical" href="https://stockledger.co/contact.html">
+
+<!-- Social share card -->
+<meta property="og:site_name" content="StockLedger">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://stockledger.co/contact.html">
+<meta property="og:title" content="Book a Free Inventory Health Check">
+<meta property="og:description" content="A free 30-minute review of your stock and books. You get a written findings note - whether you hire us or not.">
+<meta property="og:image" content="https://stockledger.co/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="StockLedger - bookkeeping, inventory control and costing for businesses that carry stock.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Book a Free Inventory Health Check">
+<meta name="twitter:description" content="A free 30-minute review of your stock and books. You get a written findings note - whether you hire us or not.">
+<meta name="twitter:image" content="https://stockledger.co/assets/img/og-cover.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2316283f'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23c99a5b' text-anchor='middle'>S</text></svg>">
 <style>
   .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
@@ -39,11 +57,18 @@
   .checklist { list-style: none; padding: 0; margin: 0; }
   .checklist li { position: relative; padding-left: 27px; font-size: .95rem; margin-bottom: 12px; color: var(--ink-2); }
   .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--bronze); font-weight: 800; }
+  /* Grid and flex items default to min-width:auto, so the longest <option> string
+     ("Full Stack (Inventory + Books) - $1,299/mo") sets a floor wider than a phone
+     screen and pushes the whole column past the viewport. */
+  .contact-grid > *, .field-row > * { min-width: 0; }
+  .field input, .field select, .field textarea { min-width: 0; max-width: 100%; }
   @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
   @media (max-width: 520px) { .field-row { grid-template-columns: 1fr; gap: 0; } }
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="site-head">
   <div class="wrap nav">
@@ -57,14 +82,19 @@
       <a href="index.html#pricing">Pricing</a>
       <a href="about.html">About</a>
       <a href="index.html#faq">FAQ</a>
+      <a class="nav-menu-cta" href="contact.html">Book a Free Review</a>
+      <!-- TODO: replace with the real US virtual number (also in .nav-phone above). -->
+      <a class="nav-menu-phone" href="tel:+15550100199">✆&nbsp; +1 (555) 010-0199</a>
     </nav>
     <div class="nav-cta">
       <a class="nav-phone" href="tel:+15550100199"><span>✆</span>+1 (555) 010-0199</a>
       <a class="btn btn-primary btn-sm" href="#form">Book a Free Review</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
     </div>
   </div>
 </header>
+
+<main id="main">
 
 <section class="page-hero">
   <div class="wrap">
@@ -94,9 +124,16 @@
                1. Formspree  → https://formspree.io  (create form, paste ID below)
                2. Web3Forms  → https://web3forms.com (free, no account limits)
              Then replace YOUR_FORM_ID in the action attribute.
-             Until connected, the form will not send anything.
+             Until connected, the form SILENTLY DISCARDS every lead.
              ============================================================ -->
         <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+          <!-- Where Formspree sends people after a successful submit. -->
+          <input type="hidden" name="_next" value="https://stockledger.co/thanks.html">
+          <input type="hidden" name="_subject" value="New health check request - StockLedger">
+          <!-- Spam honeypot: real people never see it, bots fill it and get rejected. -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+                 aria-hidden="true" style="display:none">
 
           <div class="field-row">
             <div class="field">
@@ -131,7 +168,6 @@
                 <option>United Arab Emirates</option>
                 <option>Saudi Arabia</option>
                 <option>Qatar</option>
-                <option>Australia</option>
                 <option>Other</option>
               </select>
             </div>
@@ -208,7 +244,7 @@
           <div class="contact-ico">◷</div>
           <div>
             <b>Book a time directly</b>
-            <span><a href="#">Calendly link — to be added</a></span>
+            <span>Calendly link — to be added</span>
           </div>
         </div>
 
@@ -216,7 +252,7 @@
           <div class="contact-ico">✆</div>
           <div>
             <b>WhatsApp</b>
-            <span><a href="#">Business number — to be added</a></span>
+            <span>Business number — to be added</span>
           </div>
         </div>
 
@@ -224,7 +260,7 @@
           <div class="contact-ico">in</div>
           <div>
             <b>LinkedIn</b>
-            <span><a href="#">Company page — to be added</a></span>
+            <span>Company page — to be added</span>
           </div>
         </div>
 
@@ -238,6 +274,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="site-foot">
   <div class="wrap">
@@ -266,6 +304,7 @@
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="index.html#pricing">Pricing</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
       <div>
@@ -273,22 +312,31 @@
         <ul>
           <li><a href="contact.html">Book a Free Review</a></li>
           <li><a href="mailto:hello@stockledger.co">hello@stockledger.co</a></li>
-          <li><a href="#">WhatsApp</a></li>
-          <li><a href="#">LinkedIn</a></li>
+          <!-- TODO: restore as <a href="..."> once the real URLs exist. -->
+          <li>WhatsApp &mdash; coming soon</li>
+          <li>LinkedIn &mdash; coming soon</li>
         </ul>
       </div>
     </div>
     <div class="foot-bot">
       <span>© 2026 StockLedger. All rights reserved.</span>
-      <span>Client references available on request.</span>
+      <!-- TODO: add the registered business address here - US B2B buyers look for one. -->
+      <span><a href="privacy.html">Privacy</a> · Client references available on request.</span>
     </div>
   </div>
 </footer>
 
 <script>
-  var t = document.getElementById('navToggle');
-  var l = document.getElementById('navLinks');
-  if (t && l) { t.addEventListener('click', function () { l.classList.toggle('open'); }); }
+  (function () {
+    var t = document.getElementById('navToggle');
+    var l = document.getElementById('navLinks');
+    if (!t || !l) return;
+    t.addEventListener('click', function () {
+      var open = l.classList.toggle('open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
 </script>
+<script src="assets/vera.js" defer></script>
 </body>
 </html>

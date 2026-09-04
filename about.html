@@ -7,9 +7,29 @@
 <meta name="description" content="Two specialists: 15+ years of warehouse and inventory operations, and a costing and QuickBooks bookkeeping practice. You deal directly with the people doing the work.">
 <meta name="theme-color" content="#16283f">
 <link rel="stylesheet" href="assets/styles.css">
+<!-- TODO: swap stockledger.co for the real domain once decided (also in sitemap.xml). -->
+<link rel="canonical" href="https://stockledger.co/about.html">
+
+<!-- Social share card -->
+<meta property="og:site_name" content="StockLedger">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://stockledger.co/about.html">
+<meta property="og:title" content="About - Who You'll Work With">
+<meta property="og:description" content="Two specialists: 15+ years of warehouse and inventory operations, and a costing and QuickBooks bookkeeping practice.">
+<meta property="og:image" content="https://stockledger.co/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="StockLedger - bookkeeping, inventory control and costing for businesses that carry stock.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About - Who You'll Work With">
+<meta name="twitter:description" content="Two specialists: 15+ years of warehouse and inventory operations, and a costing and QuickBooks bookkeeping practice.">
+<meta name="twitter:image" content="https://stockledger.co/assets/img/og-cover.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2316283f'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%23c99a5b' text-anchor='middle'>S</text></svg>">
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="site-head">
   <div class="wrap nav">
@@ -23,14 +43,19 @@
       <a href="index.html#pricing">Pricing</a>
       <a href="about.html" class="active">About</a>
       <a href="index.html#faq">FAQ</a>
+      <a class="nav-menu-cta" href="contact.html">Book a Free Review</a>
+      <!-- TODO: replace with the real US virtual number (also in .nav-phone above). -->
+      <a class="nav-menu-phone" href="tel:+15550100199">✆&nbsp; +1 (555) 010-0199</a>
     </nav>
     <div class="nav-cta">
       <a class="nav-phone" href="tel:+15550100199"><span>✆</span>+1 (555) 010-0199</a>
       <a class="btn btn-primary btn-sm" href="contact.html">Book a Free Review</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
     </div>
   </div>
 </header>
+
+<main id="main">
 
 <section class="page-hero">
   <div class="wrap">
@@ -89,7 +114,7 @@
     <div class="grid g-2">
 
       <div class="card">
-        <img class="person-photo-lg" src="assets/img/mohsin.jpg" alt="Mohsin Raza" loading="lazy">
+        <picture><source srcset="assets/img/mohsin.webp" type="image/webp"><img class="person-photo-lg" src="assets/img/mohsin.jpg" alt="Mohsin Raza" loading="lazy" decoding="async" width="880" height="1100"></picture>
         <h3 style="margin-bottom:2px;">Mohsin Raza</h3>
         <div class="person-role">Inventory &amp; Warehouse Operations</div>
         <p style="color:var(--ink-2); font-size:.96rem;">
@@ -116,7 +141,7 @@
       </div>
 
       <div class="card">
-        <img class="person-photo-lg" src="assets/img/sajjad.jpg" alt="Sajjad" loading="lazy">
+        <picture><source srcset="assets/img/sajjad.webp" type="image/webp"><img class="person-photo-lg" src="assets/img/sajjad.jpg" alt="Sajjad" loading="lazy" decoding="async" width="880" height="1100"></picture>
         <h3 style="margin-bottom:2px;">Sajjad <span style="font-size:.78rem;color:var(--ink-3);font-family:var(--sans);font-weight:400;">[ surname to confirm ]</span></h3>
         <div class="person-role">Costing, Bookkeeping &amp; QuickBooks</div>
         <p style="color:var(--ink-2); font-size:.96rem;">
@@ -208,7 +233,7 @@
   </div>
 </section>
 
-<section class="cta-band photo-band" style="background-image:url('assets/img/wh-hero.jpg');">
+<section class="cta-band photo-band bg-wh-hero">
   <div class="wrap">
     <h2>Talk to the people who'd actually do the work</h2>
     <p>No sales team in between. Book 30 minutes and bring your worst number.</p>
@@ -218,6 +243,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="site-foot">
   <div class="wrap">
@@ -246,6 +273,7 @@
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="index.html#pricing">Pricing</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
       <div>
@@ -253,22 +281,31 @@
         <ul>
           <li><a href="contact.html">Book a Free Review</a></li>
           <li><a href="mailto:hello@stockledger.co">hello@stockledger.co</a></li>
-          <li><a href="#">WhatsApp</a></li>
-          <li><a href="#">LinkedIn</a></li>
+          <!-- TODO: restore as <a href="..."> once the real URLs exist. -->
+          <li>WhatsApp &mdash; coming soon</li>
+          <li>LinkedIn &mdash; coming soon</li>
         </ul>
       </div>
     </div>
     <div class="foot-bot">
       <span>© 2026 StockLedger. All rights reserved.</span>
-      <span>Client references available on request.</span>
+      <!-- TODO: add the registered business address here - US B2B buyers look for one. -->
+      <span><a href="privacy.html">Privacy</a> · Client references available on request.</span>
     </div>
   </div>
 </footer>
 
 <script>
-  var t = document.getElementById('navToggle');
-  var l = document.getElementById('navLinks');
-  if (t && l) { t.addEventListener('click', function () { l.classList.toggle('open'); }); }
+  (function () {
+    var t = document.getElementById('navToggle');
+    var l = document.getElementById('navLinks');
+    if (!t || !l) return;
+    t.addEventListener('click', function () {
+      var open = l.classList.toggle('open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
 </script>
+<script src="assets/vera.js" defer></script>
 </body>
 </html>

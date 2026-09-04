@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request received | StockLedger</title>
+<meta name="description" content="Your inventory health check request has been received. We reply within 12 hours, Monday to Saturday.">
+<meta name="theme-color" content="#16283f">
+<link rel="stylesheet" href="assets/styles.css">
+<meta name="robots" content="noindex, follow">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span>StockLedger<small>Inventory &amp; Accounts</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="nav-menu-cta" href="contact.html">Book a Free Review</a>
+      <!-- TODO: replace with the real US virtual number (also in .nav-phone above). -->
+      <a class="nav-menu-phone" href="tel:+15550100199">✆&nbsp; +1 (555) 010-0199</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+15550100199"><span>✆</span>+1 (555) 010-0199</a>
+      <a class="btn btn-primary btn-sm" href="contact.html">Book a Free Review</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Received</span>
+    <h1>Thanks &mdash; we&rsquo;ve got it</h1>
+    <p>
+      Your request is in. We reply within 12 hours, Monday to Saturday, from a real
+      person on the team &mdash; not an autoresponder.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow">
+    <h2>What happens next</h2>
+
+    <div class="grid g-3" style="margin-top:34px;">
+      <div class="step">
+        <div class="step-n">1</div>
+        <h3>We read it properly</h3>
+        <p>One of us reads what you wrote and comes back with questions, or a time to talk.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <h3>Thirty minutes</h3>
+        <p>A call, no slide deck. Bring whatever you have &mdash; a stock report, a QuickBooks file, a spreadsheet.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <h3>A written note</h3>
+        <p>What&rsquo;s inaccurate, what it&rsquo;s likely costing you, and the order we&rsquo;d fix it in. Yours to keep either way.</p>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin-top:42px;">
+      <strong>Nothing to do in the meantime.</strong> If it&rsquo;s urgent, reply to the
+      confirmation email and it comes straight to us.
+    </div>
+
+    <div class="btn-row" style="margin-top:36px;">
+      <a class="btn btn-ghost" href="case-studies.html">Read the case studies</a>
+      <a class="btn btn-ghost" href="services.html">Browse services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand-mark">S</span>
+          <span>StockLedger<small>Inventory &amp; Accounts</small></span>
+        </a>
+        <p style="max-width:320px;">Bookkeeping, inventory control and costing for businesses that carry stock. Serving the US, UK, Canada and the Middle East.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#inventory">Inventory Control</a></li>
+          <li><a href="services.html#bookkeeping">QuickBooks Bookkeeping</a></li>
+          <li><a href="services.html#costing">Costing &amp; Pricing</a></li>
+          <li><a href="services.html#data">Data Entry</a></li>
+          <li><a href="services.html#consultancy">Warehouse Consultancy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Book a Free Review</a></li>
+          <li><a href="mailto:hello@stockledger.co">hello@stockledger.co</a></li>
+          <!-- TODO: restore as <a href="..."> once the real URLs exist. -->
+          <li>WhatsApp &mdash; coming soon</li>
+          <li>LinkedIn &mdash; coming soon</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 StockLedger. All rights reserved.</span>
+      <!-- TODO: add the registered business address here - US B2B buyers look for one. -->
+      <span><a href="privacy.html">Privacy</a> · Client references available on request.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var t = document.getElementById('navToggle');
+    var l = document.getElementById('navLinks');
+    if (!t || !l) return;
+    t.addEventListener('click', function () {
+      var open = l.classList.toggle('open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
+<script src="assets/vera.js" defer></script>
+</body>
+</html>

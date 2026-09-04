@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Thank-you and error pages carry <meta name="robots" content="noindex, follow">
+# as well; these rules keep them out of crawl paths entirely.
+Disallow: /thanks.html
+Disallow: /404.html
+
+# TODO: swap in the real domain once decided.
+Sitemap: https://stockledger.co/sitemap.xml
