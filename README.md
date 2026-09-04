@@ -96,9 +96,13 @@ sides — the card is dense (SKU rows, figures, status pills) and the left colum
 copy, so anything overlapping either one covers real content. Above and below is the
 only genuinely free space.
 
-They drift 9px on a 7s loop, disabled under `prefers-reduced-motion`, and are removed
-below 980px where the layout stacks and the gutter disappears. The whole visual is
-`aria-hidden` — every claim on the chips is stated properly elsewhere on the page.
+They drift 9px on a 7s loop, disabled under `prefers-reduced-motion`. The whole visual
+is `aria-hidden` — every claim on the chips is stated properly elsewhere on the page.
+
+Below 980px the layout stacks, so the third chip is dropped (three would collide on a
+320px screen) and the remaining two hang off the card's top and bottom edges. **Don't
+hide them all on mobile** — that was the first attempt and it meant nobody on a phone,
+or on a browser window under 1024px, ever saw them.
 
 ## Images
 
