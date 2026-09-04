@@ -67,26 +67,49 @@ major accounting brand in South Asia and the Gulf, so it would read as the softw
 
 ## Icons
 
-Two sets, both inline SVG — no icon font, no sprite, no extra request. All use a 24×24
-viewBox with `stroke="currentColor"`, `stroke-width` 1.6–1.7, round caps and joins
-(Lucide geometry), so any Lucide/Feather/Tabler icon drops in without restyling.
+Source artwork lives in `Icons/` and is committed — it is only ~100KB and the
+derivatives are not reproducible without it. Web-ready versions are generated into
+`assets/img/icons/` as transparent PNG + WebP at 256px, and that is what the pages use.
 
-Each one is preceded by an HTML comment naming it, e.g. `<!-- icon: package -->`.
-
-| Where | Icon name | Meaning on the page |
+| Slot | File in `assets/img/icons/` | Source |
 |---|---|---|
-| Hero chip 1 | `clipboard-check` | Count matched — system vs floor |
-| Hero chip 2 | `rotate-cw` | FIFO enforced — expiry tracked |
-| Hero chip 3 | `calculator` | True unit cost — per line |
-| Service card 1 | `package` | Inventory Control |
-| Service card 2 | `book-open` | QuickBooks Bookkeeping |
-| Service card 3 | `calculator` | Costing & Pricing |
-| Service card 4 | `warehouse` | Warehouse Consultancy |
-| Vera launcher | `message-circle` | Ask Vera |
+| Hero chip — *Count matched* | `clipboard-check` | `clipboard_checks.png` |
+| Hero chip — *True unit cost* | `calculator-costing` | `Calculator Costing.avif` |
+| Service card — Inventory Control | `package` | `Package.avif` |
+| Service card — QuickBooks Bookkeeping | `book-open` | `Book Open.avif` |
+| Service card — Costing & Pricing | `calculator` | `Calculatgor.avif` |
+| Service card — Warehouse Consultancy | `warehouse` | `Warehouse.avif` |
+| Vera launcher | `message-circle` | `message-circle.jpg` |
 
-To swap one, replace the contents of the `<svg>` — keep the `viewBox` and the class on
-the wrapper, and don't add `fill` or `stroke` attributes to the paths; the stylesheet
-sets both so the icons inherit the bronze automatically.
+Each is preceded in the HTML by a comment naming it, e.g. `<!-- icon: package -->`.
+
+### Regenerating them
+
+Every source is a flat illustration on a solid ground — white, cyan or yellow. The step
+that matters is **flooding inward from the border rather than keying out a colour**, so a
+white highlight *inside* the artwork survives while the ground around it goes. Then trim
+to the artwork, pad 6% to a square, resize to 256px, save PNG + WebP q88.
+
+Tolerance is 34 for every file except `Calculatgor.avif`, which needs **58**. Its yellow
+ground carries a faint grid texture whose lines sit further from the median colour than
+the cells do, so at 34 the fill is dammed at every line and leaves a speckled square
+behind. Several automatic ways of detecting that were tried and each one misfired on a
+different image, so the value is simply pinned per file.
+
+### Two things to know
+
+**No icon for the FIFO chip yet.** The hero originally had three chips; the middle one
+(*FIFO enforced — expiry tracked*) has no artwork, so it is not rendered. Supply a
+rotation/refresh icon and it can come back — the CSS position `.float-chip-2` is the
+only thing that needs restoring.
+
+**The set is stylistically mixed and off-palette.** These are saturated flat
+illustrations — cyan, yellow, pink, brown — against a site built on navy, bronze and
+cream, and they come from more than one icon family (two different calculator styles,
+different line weights). They are used as supplied, on neutral grounds rather than the
+bronze tint that suited the previous stroke icons, which is the most sympathetic setting
+for them. If the mix ever looks wrong, the fix is a single-family set rather than
+recolouring these.
 
 ### The floating chips
 

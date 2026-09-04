@@ -275,11 +275,11 @@ section { padding: 88px 0; }
 .card h3 { margin-bottom: 10px; }
 .card p { color: var(--ink-3); font-size: .96rem; margin-bottom: 0; }
 .card-icon {
-  width: 44px; height: 44px; border-radius: var(--radius); margin-bottom: 20px;
-  background: var(--bronze-soft); color: var(--bronze-dark);
-  border: 1px solid #e5d7c1;
-  display: grid; place-items: center; font-size: 1.25rem;
+  width: 62px; height: 62px; border-radius: var(--radius); margin-bottom: 20px;
+  background: var(--bg-soft); border: 1px solid var(--line);
+  display: grid; place-items: center;
 }
+.card-icon img { width: 40px; height: 40px; display: block; }
 
 /* Problem cards */
 .prob-card {
@@ -603,17 +603,10 @@ section { padding: 88px 0; }
   animation: chip-drift 7s ease-in-out infinite;
 }
 .float-chip b { display: block; color: var(--ink); font-size: .86rem; font-weight: 700; }
-.float-chip svg {
-  width: 34px; height: 34px; flex: none; box-sizing: border-box; padding: 7px;
-  background: var(--bronze-soft); border: 1px solid #e5d7c1;
-  border-radius: var(--radius);
-  stroke: var(--bronze-dark); stroke-width: 1.7; fill: none;
-  stroke-linecap: round; stroke-linejoin: round;
-}
+.float-chip img { width: 34px; height: 34px; flex: none; display: block; }
 
-.float-chip-1 { top: -58px;    left: -26px;  animation-delay: 0s; }
-.float-chip-2 { bottom: -58px; left: -34px;  animation-delay: -2.4s; }
-.float-chip-3 { bottom: -58px; right: -18px; animation-delay: -4.8s; }
+.float-chip-1 { top: -62px;    left: -26px;  animation-delay: 0s; }
+.float-chip-3 { bottom: -62px; right: -18px; animation-delay: -3.5s; }
 
 @keyframes chip-drift {
   0%, 100% { transform: translateY(0); }
@@ -637,24 +630,17 @@ section { padding: 88px 0; }
    would collide on a 320px screen. */
 @media (max-width: 980px) {
   .float-chip-1 { top: -54px; left: 0; }
-  .float-chip-2 { display: none; }
   .float-chip-3 { bottom: -54px; right: 0; left: auto; }
 }
 @media (max-width: 560px) {
   .float-chip { padding: 7px 11px; font-size: .74rem; gap: 8px; }
   .float-chip b { font-size: .82rem; }
-  .float-chip svg { width: 30px; height: 30px; padding: 6px; }
-  .float-chip-1 { top: -48px; }
-  .float-chip-3 { bottom: -48px; }
+  .float-chip img { width: 28px; height: 28px; }
+  .float-chip-1 { top: -52px; }
+  .float-chip-3 { bottom: -52px; }
 }
 
 /* ---------- Service card icons ---------- */
-.card-icon svg {
-  width: 23px; height: 23px;
-  stroke: currentColor; stroke-width: 1.6; fill: none;
-  stroke-linecap: round; stroke-linejoin: round;
-}
-
 /* Stat strip sitting inside the hero */
 .hero-stats-band { position: relative; background: rgba(6,14,25,.55); border-top: 1px solid rgba(255,255,255,.15); }
 .hero-stats {
@@ -766,7 +752,10 @@ section { padding: 88px 0; }
   transition: background .18s ease, transform .18s ease;
 }
 .vera-launch:hover { background: var(--bronze-deep); transform: translateY(-2px); }
-.vera-launch svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.vera-launch img {
+  width: 30px; height: 30px; flex: none; box-sizing: border-box; padding: 4px;
+  background: #fff; border-radius: 50%; display: block;
+}
 .vera-launch[hidden] { display: none; }
 
 .vera-panel {
