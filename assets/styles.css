@@ -60,7 +60,14 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
+/* height:auto is the required companion to the width/height attributes on every
+   <img>. Without it the height attribute acts as a presentational hint, which wins
+   over `aspect-ratio` (that only applies when height is auto) and leaves images
+   rendered at their full natural height: the About portraits became a 262x1100
+   sliver, the case cards ignored their 16/10 crop, and the case figures stretched.
+   Rules that set an explicit height (.person-photo, .video-poster, the icon images)
+   are class selectors and still win over this. */
+img { max-width: 100%; height: auto; display: block; }
 picture { display: block; }
 a { color: inherit; }
 
@@ -782,8 +789,9 @@ section { padding: 88px 0; }
   transition: background .18s ease, transform .18s ease;
 }
 .vera-launch:hover { background: var(--bronze-deep); transform: translateY(-2px); }
+.vera-launch picture { flex: none; }
 .vera-launch img {
-  width: 30px; height: 30px; flex: none; box-sizing: border-box; padding: 4px;
+  width: 30px; height: 30px; box-sizing: border-box; padding: 4px;
   background: #fff; border-radius: 50%; display: block;
 }
 .vera-launch[hidden] { display: none; }

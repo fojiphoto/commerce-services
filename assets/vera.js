@@ -106,7 +106,8 @@
   var wrap = document.createElement('div');
   wrap.innerHTML =
     '<button class="vera-launch" id="veraLaunch" aria-expanded="false" aria-controls="veraPanel">' +
-      '<img src="assets/img/icons/message-circle.png" alt="" width="30" height="30">' +
+      '<picture><source srcset="assets/img/icons/message-circle.webp" type="image/webp">' +
+        '<img src="assets/img/icons/message-circle.png" alt="" width="30" height="30"></picture>' +
       'Ask ' + AGENT + '</button>' +
     '<div class="vera-panel" id="veraPanel" role="dialog" aria-label="' + AGENT +
         ' - quick help" hidden>' +
