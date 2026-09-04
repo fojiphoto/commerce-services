@@ -161,24 +161,30 @@ These need information only you have. Search for `TODO` to find each one in plac
    discards every lead.** Create a form at [formspree.io](https://formspree.io) or
    [web3forms.com](https://web3forms.com). The redirect to `thanks.html`, the subject
    line and the spam honeypot are already wired.
-3. **Domain** — `stockledger.co` is assumed in every `canonical`, the Open Graph tags,
-   `sitemap.xml`, `robots.txt` and the form's `_next`. Decide the real one and replace
-   it in all of them.
-4. **Contact details** — email, Calendly link, WhatsApp number and LinkedIn URL. These
+3. **Email address** — `hello@stockledger.co` is still used in every footer, on the
+   contact page, in `privacy.html` and in `vera.js`. **`stockledger.co` is not our
+   domain** — it redirects to `www.stockedger.co`, an unrelated site — so mail sent
+   there does not reach us. Replace it with a real address before promoting the site.
+
+4. **Domain** — the site is live at `https://factorialstudio.com/commerce-services/`,
+   and every `canonical`, Open Graph tag, `sitemap.xml`, `robots.txt` entry and the
+   form's `_next` now point there. If a dedicated domain is bought later, replace the
+   base URL in all of those.
+5. **Contact details** — email, Calendly link, WhatsApp number and LinkedIn URL. These
    currently render as plain text (`WhatsApp — coming soon`) rather than dead links;
    restore them as `<a href="...">` once the URLs exist.
-5. **Testimonials** — three on `index.html` and three on `case-studies.html` are
+6. **Testimonials** — three on `index.html` and three on `case-studies.html` are
    **commented out**, not deleted. Ship them by pasting the real quote, name, title and
    company into each figure and removing `class="needs-content"`. They were hidden
    because publishing `[ REVIEW #1 ]` placeholders contradicts the site's own stated
    policy on invented testimonials.
-6. **Sajjad's surname** — marked `[ surname to confirm ]` in `index.html` and `about.html`.
-7. **Business address** — US B2B buyers look for one. Footer and privacy page both have
+7. **Sajjad's surname** — marked `[ surname to confirm ]` in `index.html` and `about.html`.
+8. **Business address** — US B2B buyers look for one. Footer and privacy page both have
    a marked slot; add `address` to the JSON-LD at the same time.
-8. **Certification badges** — QuickBooks ProAdvisor and Xero Advisor are marked
+9. **Certification badges** — QuickBooks ProAdvisor and Xero Advisor are marked
    `class="badge pending"` with "in progress". Remove `pending` and that text only once
    the certification is actually earned.
-9. **Privacy policy** — `privacy.html` describes how the site genuinely behaves today,
+10. **Privacy policy** — `privacy.html` describes how the site genuinely behaves today,
    but the controller name, business address and retention period need a legal review
    for your jurisdiction. Delete the yellow note box when that is done.
 

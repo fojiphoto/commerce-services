@@ -7,4 +7,4 @@ Disallow: /thanks.html
 Disallow: /404.html
 
 # TODO: swap in the real domain once decided.
-Sitemap: https://stockledger.co/sitemap.xml
+Sitemap: https://factorialstudio.com/commerce-services/sitemap.xml
